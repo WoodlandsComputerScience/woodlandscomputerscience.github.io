@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@custom-variant dark (*);
+@theme {
+    --color-brand: #17a71b;
+}
+@layer components {
+    .hp-link {
+        background-image:linear-gradient(to right, var(--color-purple-400), var(--color-cyan-400) 66.66%, var(--color-purple-400));
+        background-clip: text;
+        color: transparent;
+        background-size: 300% 100%;
+        background-position-x: right;
+        transition: all 250ms ease-in-out;
+        font-weight: 900;
+    }
+    .hp-link:hover {
+        background-position-x: right 100%;
+    }
+    .hp-link .lucide {
+        transition: all 250ms ease-in-out;
+        color: var(--color-cyan-400);
+    }
+    .hp-link:hover .lucide {
+        color: var(--color-purple-400);
+    }
+}
