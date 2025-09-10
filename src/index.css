@@ -2,8 +2,22 @@
 @custom-variant dark (*);
 @theme {
     --color-brand: #17a71b;
+    --font-mono: 'JetBrains Mono', monospace;
 }
+
 @layer components {
+    .btn {
+        display: inline-flex;
+        border-radius: calc(infinity * 1px);;
+        color: white;
+        padding: calc(2*var(--spacing)) calc(3*var(--spacing));
+    }
+
+    .primary {
+        background-color: var(--color-brand);
+        font-weight: 600;
+    }
+
     .hp-link {
         background-image:linear-gradient(to right, var(--color-purple-400), var(--color-cyan-400) 66.66%, var(--color-purple-400));
         background-clip: text;
