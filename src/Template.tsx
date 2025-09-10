@@ -10,9 +10,9 @@ export default function Template({children = []} : {children?: React.ReactNode})
             "flex-none text-left fixed lg:sticky top-0 right-4 left-4 lg:top-4 w-auto"}
         >
             <div className="flex justify-between">
-                <a href="/" className="flex">
-                    <img src="/logo.png" alt="logo" className="flex-none h-20 -mt-3 -ml-3" />
-                    <h1 className="text-2xl font-bold flex-auto">
+                <a href="/" className="flex items-center -mt-3">
+                    <img src="/logo.png" alt="logo" className="flex-none h-20 -ml-4" />
+                    <h1 className="text-xl font-bold flex-auto">
                         Woodlands <br/> Computer Science
                     </h1>
                 </a>
