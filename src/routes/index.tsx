@@ -14,7 +14,7 @@ function Index() {
       <Template>
           <div className="p-4 shadow-lg bg-neutral-800 rounded-xl mb-4">
               <TrafficLight />
-              <h1 className="text-3xl font-bold mb-4">Woods CS is back for 2025!</h1>
+              <h1 className="text-4xl font-bold mb-4">Woods CS is back for 2025</h1>
               <div className="flex flex-col gap-4 items-start mw-4xl">
                   <p>
                       Welcome to the Woodlands computer science community!

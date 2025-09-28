@@ -17,7 +17,7 @@ export default function Template({children = []} : {children?: React.ReactNode})
             <div className={"transition-[grid-template-rows] ease-in-out overflow-hidden duration-200 grid sm:block " + (navOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                 <div className="min-h-0 font-light">
                     <ul className="flex flex-col ml-0 sm:flex-row lg:flex-col lg:ml-20 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
-                        <li><a href="/public" className="navLink hover:text-brand">
+                        <li><a href="/" className="navLink hover:text-brand">
                             <FaAngleRight />Home
                         </a></li>
                         <li><a href="/public" className="navLink hover:text-brand">
