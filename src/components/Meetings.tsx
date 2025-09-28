@@ -1,4 +1,4 @@
-import {format, isBefore, isToday} from "date-fns";
+import {format, isBefore } from "date-fns";
 
 interface Meeting {
     date: Date;
@@ -38,25 +38,25 @@ const meetings : Meeting[] = [
     },
 ];
 
+
+let prev: Meeting = meetings[0];
+const today = new Date();
+let next: Meeting | undefined;
+for (const event of meetings) {
+    if (isBefore(event.date, today)) {
+        prev = event;
+    } else {
+        next = event;
+        break;
+    }
+}
+
+export const previousMeeting = prev;
+export const nextMeeting = next;
+
 export default function Meetings () {
     // @ts-ignore
-    let prev: Meeting = meetings[0];
-    const today = new Date();
-    let next: Meeting | undefined;
-    for (const event of meetings) {
-        if (isBefore(event.date, today)) {
-            prev = event;
-        } else {
-            next = event;
-            break;
-        }
-    }
     return <div className="flex flex-col gap-8">
-        Meetings are weekly on Mondays.
-        {next && isToday(next.date) && <p><strong>Our next meeting is today!.</strong></p>}
-        {next && !isToday(next.date) && <p>
-            Our next meeting will be on <strong>{format(next.date, "MMMM d")}</strong>.
-        </p>}
         <ol className="flex flex-col gap-8 border-l-1 border-foreground-dimmed ml-2 list-none">
             {meetings.map((meeting: Meeting) => {
                 let titleClass: string;

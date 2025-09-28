@@ -17,16 +17,16 @@ export default function Template({children = []} : {children?: React.ReactNode})
             <div className={"transition-[grid-template-rows] ease-in-out overflow-hidden duration-200 grid sm:block " + (navOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                 <div className="min-h-0 font-light">
                     <ul className="flex flex-col ml-0 sm:flex-row lg:flex-col lg:ml-20 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
-                        <li><a href="/" className="navLink hover:text-brand">
+                        <li><a href="/#home" className="navLink hover:text-brand">
                             <FaAngleRight />Home
                         </a></li>
-                        <li><a href="/public" className="navLink hover:text-brand">
+                        <li><a href="/#calendar" className="navLink hover:text-brand">
                             <FaAngleRight />Calendar
                         </a></li>
-                        <li><a href="/public" className="navLink hover:text-brand">
+                        <li><a href="/meeting-notes" className="navLink hover:text-brand">
                             <FaAngleRight />Meeting Notes
                         </a></li>
-                        <li><a href="/public" className="navLink font-black gradient-text text-to-emerald-300 text-from-brand">
+                        <li><a href="/game-jam" className="navLink font-black gradient-text text-to-emerald-300 text-from-brand">
                             <FaAngleRight />Game Jam 2025
                         </a></li>
                     </ul>

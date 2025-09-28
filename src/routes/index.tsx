@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router"
 import Template from "../components/Template.tsx";
 import TrafficLight from "../components/TrafficLight.tsx";
-import Calendar from "../components/Meetings.tsx";
+import Meetings, {nextMeeting} from "../components/Meetings.tsx";
 import {FaAngleRight, FaDiscord} from "react-icons/fa6";
 import {DISCORD_URL} from "../Config.ts";
+import {format, isToday} from "date-fns";
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -12,9 +13,9 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
       <Template>
-          <div className="p-4 shadow-lg bg-neutral-800 rounded-xl mb-4">
+          <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4">
               <TrafficLight />
-              <h1 className="text-4xl font-bold mb-4">Woods CS is back for 2025</h1>
+              <h1 className="text-3xl font-bold mb-4" id="home">Woods CS is back for 2025</h1>
               <div className="flex flex-col gap-4 items-start mw-4xl">
                   <p>
                       Welcome to the Woodlands computer science community!
@@ -41,17 +42,24 @@ function Index() {
               <div className="flex flex-col-reverse xl:flex-row items-start">
                   <div>
                       <div className="flex flex-col gap-4 max-w-2xl items-start">
-                          <h1 className="text-3xl font-black mb-4" id="gamejam">Game Jam 2025</h1>
-                          <p>This month, Woods CS is once again hosting our annual Game Jam! The theme for this year is <strong>Comes in Pairs</strong>.</p>
+                          <h1 className="text-3xl font-bold mb-4" id="game-jam">Game Jam 2025</h1>
+                          <p>This month, we're once again hosting our annual Game Jam! The theme for this year is <strong>Comes in Pairs</strong>.</p>
                           <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
                               Come join us in Room 100 where we'll teach you how to use the Godot Game Engine&mdash;&mdash;no technical or gamedev experience necessary.</p>
                           <p className="text-foreground-dimmed text-sm"><i>Submissions are due on October 13.</i></p>
                           <a href="#" className="btn border-2">Details <FaAngleRight /></a>
                       </div>
                       <hr  className="my-8"/>
-                      <div>
-                          <h1 className="text-3xl font-bold mb-4" id="calendar">Calendar</h1>
-                          <Calendar />
+                      <div className="flex flex-col gap-4">
+                          <h1 className="text-3xl font-bold" id="calendar">Calendar</h1>
+                          <div className="mb-4">
+                              <p>Meetings are weekly on Mondays.</p>
+                              {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!.</strong></p>}
+                              {nextMeeting && !isToday(nextMeeting.date) && <p>
+                                  Our next meeting will be on <strong>{format(nextMeeting.date, "MMMM d")}</strong>.
+                              </p>}
+                          </div>
+                          <Meetings />
                       </div>
                   </div>
                   <img alt="Game jam poster" src="/GameJam.png" className="xl:sticky xl:top-8 w-2xl md:max-w-1/2 my-8 xl:my-0 xl:mx-8" />
@@ -75,7 +83,7 @@ function Index() {
                       </p>
                       <p className="text-foreground-dimmed text-sm"><i>More details coming soon, stay tuned!</i></p>
                   </article>
-                  <img alt="hack::peel logo" src="/HackPeelLogo.png" className="w-2xl md:max-w-3/4 my-8 xl:my-0 xl:mx-8" />
+                  <img alt="hack::peel logo" id="hack-peel" src="/HackPeelLogo.png" className="w-2xl md:max-w-3/4 my-8 xl:my-0 xl:mx-8" />
               </div>
 
 
