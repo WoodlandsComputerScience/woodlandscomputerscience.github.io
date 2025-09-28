@@ -14,11 +14,11 @@ const links = [
         href: "/#calendar",
         className: "nav-link hover:text-foreground-bright",
     },
-    {
+/*    {
         title: "Meeting Notes",
         href: "/meeting-notes",
         className: "nav-link hover:text-foreground-bright",
-    },
+    },*/
     {
         title: "Game Jam 2025",
         href: "/game-jam",

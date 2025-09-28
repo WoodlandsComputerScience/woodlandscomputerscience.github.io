@@ -85,14 +85,6 @@ export default function HomePage() {
                   <img alt="Game jam poster" src="/GameJam.png" className="xl:sticky xl:top-8 w-2xl md:max-w-3/7 my-8 xl:my-0 xl:mx-8" />
               </div>
               <hr className="my-8"/>
-              <h1 className="text-3xl font-bold mb-4" id="meeting-notes">Meeting Notes</h1>
-              <div className="max-w-2xl">
-                  <p>
-                      Past meeting notes and lesson material can be found on our website.
-                  </p>
-              </div>
-              <a href="#" className="btn border-2 mt-8">Meeting Notes <FaAngleRight /></a>
-              <hr className="my-8"/>
               <h1 className="text-3xl font-bold mb-4">hack::peel</h1>
               <div className="flex flex-col-reverse xl:flex-row items-start justify-between">
                   <article className="flex flex-col gap-4 items-start max-w-3xl">
