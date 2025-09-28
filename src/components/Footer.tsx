@@ -1,4 +1,4 @@
-import {DISCORD_URL, EMAIL_URL, INSTAGRAM_URL} from "./Config.ts";
+import {DISCORD_URL, EMAIL_URL, INSTAGRAM_URL} from "../Config.ts";
 import {FaDiscord, FaInstagram} from "react-icons/fa6";
 
 export default function Footer() {

@@ -12,6 +12,8 @@
   "dependencies": {
     "@fontsource/jetbrains-mono": "^5.2.6",
     "@tailwindcss/vite": "^4.1.13",
+    "@tanstack/react-router": "^1.132.17",
+    "@tanstack/react-router-devtools": "^1.132.17",
     "date-fns": "^4.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -20,6 +22,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
+    "@tanstack/router-cli": "^1.132.17",
+    "@tanstack/router-plugin": "^1.132.17",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",

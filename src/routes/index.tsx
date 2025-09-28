@@ -1,10 +1,15 @@
-import Template from "./Template.tsx";
-import TrafficLight from "./TrafficLight.tsx";
-import Calendar from "./Meetings.tsx";
+import { createFileRoute } from "@tanstack/react-router"
+import Template from "../components/Template.tsx";
+import TrafficLight from "../components/TrafficLight.tsx";
+import Calendar from "../components/Meetings.tsx";
 import {FaAngleRight, FaDiscord} from "react-icons/fa6";
-import {DISCORD_URL} from "./Config.ts";
+import {DISCORD_URL} from "../Config.ts";
 
-function Home() {
+export const Route = createFileRoute('/')({
+    component: Index,
+})
+
+function Index() {
   return (
       <Template>
           <div className="p-4 shadow-lg bg-neutral-800 rounded-xl mb-4">
@@ -78,5 +83,3 @@ function Home() {
       </Template>
   )
 }
-
-export default Home
