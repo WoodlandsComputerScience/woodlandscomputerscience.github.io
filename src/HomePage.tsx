@@ -52,7 +52,7 @@ export default function HomePage() {
                       <li>Open studio</li>
                   </ul>
                   <p>Beginning programmers or those interested in CS are encouraged to attend!</p>
-                  <div className="flex gap-4 items-start mt-4 max-w-full overflow-x-auto">
+                  <div className="flex gap-4 items-start mt-4 max-w-full flex-wrap">
                       <a href="#calendar" className="btn bg-brand text-white font-bold">See What's Happening <FaAngleRight /></a>
                       <a href={DISCORD_URL} className="btn bg-social-discord text-white"><FaDiscord /> Join us on Discord</a>
                   </div>
@@ -82,7 +82,7 @@ export default function HomePage() {
                           <Meetings />
                       </div>
                   </div>
-                  <img alt="Game jam poster" src="/GameJam.png" className="xl:sticky xl:top-8 w-2xl md:max-w-3/7 my-8 xl:my-0 xl:mx-8" />
+                  <img alt="Game jam poster" src="/GameJam.png" className="xl:sticky xl:top-8 w-2xl md:max-w-3/7 mb-8 xl:my-0 xl:mx-8" />
               </div>
               <hr className="my-8"/>
               <h1 className="text-3xl font-bold mb-4">hack::peel</h1>
@@ -97,7 +97,7 @@ export default function HomePage() {
                       </p>
                       <p className="text-foreground-dimmed text-sm"><i>More details coming soon, stay tuned!</i></p>
                   </article>
-                  <img alt="hack::peel logo" id="hack-peel" src="/HackPeelLogo.png" className="w-lg md:max-w-3/4 my-8 xl:my-0 xl:mx-8" />
+                  <img alt="hack::peel logo" id="hack-peel" src="/HackPeelLogo.png" className="hidden lg:block w-lg md:max-w-3/4 my-8 xl:my-0 xl:mx-8" />
               </div>
 
 

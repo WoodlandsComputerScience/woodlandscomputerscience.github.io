@@ -30,7 +30,7 @@
     ul {
         display: block;
         list-style-type: disc;
-        padding-inline-start: 3em;
+        @apply pl-8;
     }
     ul li {
         padding-inline-start: 0.5rem;

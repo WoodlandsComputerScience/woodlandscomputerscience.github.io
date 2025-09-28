@@ -14,7 +14,7 @@ export default function GameJamPage() {
         <Template active="/game-jam">
             <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4" id="top">
                 <TrafficLight />
-                <div className="flex flex-col xl:flex-row items-start justify-between">
+                <div className="flex flex-col-reverse xl:flex-row items-start justify-between">
                     <div className="flex flex-col grow">
                         <h1 className="text-5xl font-bold mb-4">Game Jam 2025</h1>
                         <div className="text-xl flex flex-col gap-2">
@@ -55,7 +55,7 @@ export default function GameJamPage() {
                             your game's premise.
                         </details>
                     </div>
-                    <div className="w-auto flex flex-col sm:flex-row xl:flex-col gap-4 xl:sticky xl:top-8 xl:max-w-3/7 my-8 xl:my-0 xl:mx-8">
+                    <div className="w-auto flex flex-col sm:flex-row xl:flex-col gap-8 xl:sticky xl:top-8 xl:max-w-3/7 mb-8 xl:my-0 xl:mx-8">
                         <GameJamCountdown />
                         <img alt="Game jam poster" src="/GameJam.png" className="max-w-full sm:max-w-1/2 xl:max-w-full" />
                     </div>
