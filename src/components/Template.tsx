@@ -6,7 +6,7 @@ import Logo from "./Logo.tsx";
 export default function Template({children = []} : {children?: React.ReactNode}) {
     const [ navOpen, setNavOpen ] = React.useState(false);
     return <div className="px-4 lg:py-4 flex h-full mx-auto justify-center items-start flex-col lg:flex-row lg:gap-8">
-        <nav className="z-50 p-4 shadow-2xl bg-neutral-950/90 text-left sticky top-0 lg:top-4 w-full lg:w-auto"
+        <nav className="z-50 p-4 shadow-2xl bg-neutral-950/90 text-left sticky top-0 lg:top-4 w-full lg:w-auto shrink-0"
         >
             <div className="flex justify-between">
                 <Logo />
