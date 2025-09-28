@@ -7,6 +7,6 @@ export default function Footer() {
             <a href={INSTAGRAM_URL} className="btn"><FaInstagram /></a>
             <a href={DISCORD_URL} className="btn"><FaDiscord /></a>
         </div>
-        <span className="ml-4">Questions or website issues? <a href={EMAIL_URL} >Email us</a></span>
+        <span className="ml-4">Questions, suggestions, or website issues? <a href={EMAIL_URL} >Email us</a></span>
     </div>
 }

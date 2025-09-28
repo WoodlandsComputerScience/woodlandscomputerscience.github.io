@@ -37,7 +37,7 @@ function Home() {
                   <div>
                       <div className="flex flex-col gap-4 max-w-2xl items-start">
                           <h1 className="text-3xl font-black mb-4" id="gamejam">Game Jam 2025</h1>
-                          <p>This month, Woods CS is hosting our annual Game Jam! The theme for this year is <strong>Comes in Pairs</strong>.</p>
+                          <p>This month, Woods CS is once again hosting our annual Game Jam! The theme for this year is <strong>Comes in Pairs</strong>.</p>
                           <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
                               Come join us in Room 100 where we'll teach you how to use the Godot Game Engine&mdash;&mdash;no technical or gamedev experience necessary.</p>
                           <p className="text-foreground-dimmed text-sm"><i>Submissions are due on October 13.</i></p>
