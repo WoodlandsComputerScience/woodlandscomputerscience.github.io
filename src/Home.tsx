@@ -1,16 +1,11 @@
-import { createFileRoute } from "@tanstack/react-router"
-import Template from "../components/Template.tsx";
-import TrafficLight from "../components/TrafficLight.tsx";
-import Meetings, {nextMeeting} from "../components/Meetings.tsx";
+import Template from "./components/Template.tsx";
+import TrafficLight from "./components/TrafficLight.tsx";
+import Meetings, {nextMeeting} from "./components/Meetings.tsx";
 import {FaAngleRight, FaDiscord} from "react-icons/fa6";
-import {DISCORD_URL} from "../Config.ts";
+import {DISCORD_URL} from "./Config.ts";
 import {format, isToday} from "date-fns";
 
-export const Route = createFileRoute('/')({
-    component: Index,
-})
-
-function Index() {
+export default function Home() {
   return (
       <Template>
           <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4">

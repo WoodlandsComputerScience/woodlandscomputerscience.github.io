@@ -82,7 +82,7 @@ export default function Meetings () {
                     titleClass = "text-lg text-foreground-dimmed";
                     textClass = "text-foreground-dimmed";
                 }
-                return <li className="flex">
+                return <li className="flex" key={meeting.date.toString()}>
                     <span className="flex w-3 h-3 -ml-1.5 mt-1">
                         {meeting == next && <span className={indicatorClass + " rounded-full w-3 h-3 absolute inline-flex motion-safe:animate-ping "} />}
                         <span className={indicatorClass + " rounded-full w-3 h-3 relative inline-flex"} />

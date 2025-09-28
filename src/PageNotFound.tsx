@@ -1,4 +1,4 @@
-import Logo from "./Logo.tsx";
+import Logo from "./components/Logo.tsx";
 
 export default function PageNotFound() {
 
