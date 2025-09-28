@@ -7,7 +7,7 @@ import {format, isToday} from "date-fns";
 import * as React from "react";
 import {useEffect} from "react";
 
-export default function Home() {
+export default function HomePage() {
     // Keep active heading highlighted in navbar
     const [ heading, setHeading ] = React.useState("/");
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function Home() {
             headings.forEach((heading) => {
                 if (heading.isIntersecting) {
                     if (heading.target.id == "home") {
-                        setHeading("/");
+                        setHeading("/#");
                         return;
                     } else if (heading.target.id == "calendar") {
                         setHeading("/#calendar");
@@ -23,7 +23,7 @@ export default function Home() {
                 }
             })
         }, {
-            rootMargin: '-70px 0px -75% 0px',
+            rootMargin: '0px 0px -60% 0px',
         });
 
         document.querySelectorAll("*").forEach((h) => observer.observe(h));
@@ -32,7 +32,7 @@ export default function Home() {
 
     return (
       <Template active={heading}>
-          <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4">
+          <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4" id="top">
               <TrafficLight />
               <h1 className="text-3xl font-bold mb-4" id="home">Woods CS is back for 2025</h1>
               <div className="flex flex-col gap-4 items-start mw-4xl">

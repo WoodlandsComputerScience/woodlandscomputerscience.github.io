@@ -6,18 +6,18 @@ import Logo from "./Logo.tsx";
 const links = [
     {
         title: "Home",
-        href: "/",
-        className: "nav-link hover:text-brand",
+        href: "/#",
+        className: "nav-link hover:text-foreground-bright",
     },
     {
         title: "Calendar",
         href: "/#calendar",
-        className: "nav-link hover:text-brand",
+        className: "nav-link hover:text-foreground-bright",
     },
     {
         title: "Meeting Notes",
         href: "/meeting-notes",
-        className: "nav-link hover:text-brand",
+        className: "nav-link hover:text-foreground-bright",
     },
     {
         title: "Game Jam 2025",
@@ -40,7 +40,7 @@ export default function Template({children = [], active = ""} : {children?: Reac
             </div>
             <div className={"transition-[grid-template-rows] ease-in-out overflow-hidden duration-200 grid sm:block " + (navOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                 <div className="min-h-0 font-light">
-                    <ul className="flex flex-col ml-0 sm:flex-row lg:flex-col lg:ml-20 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
+                    <ul className="flex flex-col ml-0 sm:flex-row lg:flex-col lg:ml-17 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
                         { links.map((link) => <li key={link.href} >
                             <a href={link.href} className={link.href === active ? "nav-link active" : link.className}>
                                 <FaAngleRight/>{link.title}
