@@ -17,7 +17,7 @@ export default function GameJamPage() {
                 <div className="flex flex-col-reverse xl:flex-row items-start justify-between">
                     <div className="flex flex-col grow">
                         <h1 className="text-5xl font-bold mb-4">Game Jam 2025</h1>
-                        <div className="text-xl flex flex-col gap-2">
+                        <div className="text-xl flex flex-col gap-4">
                             <p className="flex flex-row items-start gap-4">
                                 <strong className="icon-text"><FaRegClock />When: </strong> September 16 to October 13
                             </p>
