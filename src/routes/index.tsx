@@ -42,7 +42,7 @@ function Index() {
               <div className="flex flex-col-reverse xl:flex-row items-start">
                   <div>
                       <div className="flex flex-col gap-4 max-w-2xl items-start">
-                          <h1 className="text-3xl font-bold mb-4" id="game-jam">Game Jam 2025</h1>
+                          <h1 className="text-3xl font-bold" id="game-jam">Game Jam 2025</h1>
                           <p>This month, we're once again hosting our annual Game Jam! The theme for this year is <strong>Comes in Pairs</strong>.</p>
                           <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
                               Come join us in Room 100 where we'll teach you how to use the Godot Game Engine&mdash;&mdash;no technical or gamedev experience necessary.</p>
