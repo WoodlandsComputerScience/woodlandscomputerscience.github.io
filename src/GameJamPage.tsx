@@ -25,7 +25,7 @@ export default function GameJamPage() {
                                 <LuCherry />Theme: </strong>Comes in Pairs
                             </p>
                         </div>
-                        <hr className="my-4" />
+                        <hr className="my-8" />
                         <div className="flex flex-col gap-4">
                             <p>
                                 This year, we want you to think of duos, doubles, and siblings&mdash;&mdash;things
@@ -39,10 +39,10 @@ export default function GameJamPage() {
                                 help on any challenges you encounter.
                             </p>
                         </div>
-                        <hr className="my-4" />
+                        <hr className="my-8" />
                         <h1 className="text-3xl font-bold mb-4">Schedule</h1>
                         <Meetings />
-                        <hr className="my-4" />
+                        <hr className="my-8" />
                         <h1 className="text-3xl font-bold mb-4">FAQ</h1>
                         <details name="faq">
                             <summary>Do I have to use the Godot engine?</summary>
