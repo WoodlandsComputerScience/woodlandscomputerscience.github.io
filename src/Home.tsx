@@ -4,10 +4,34 @@ import Meetings, {nextMeeting} from "./components/Meetings.tsx";
 import {FaAngleRight, FaDiscord} from "react-icons/fa6";
 import {DISCORD_URL} from "./Config.ts";
 import {format, isToday} from "date-fns";
+import * as React from "react";
+import {useEffect} from "react";
 
 export default function Home() {
-  return (
-      <Template>
+    // Keep active heading highlighted in navbar
+    const [ heading, setHeading ] = React.useState("/");
+    useEffect(() => {
+        const observer = new IntersectionObserver((headings) => {
+            headings.forEach((heading) => {
+                if (heading.isIntersecting) {
+                    if (heading.target.id == "home") {
+                        setHeading("/");
+                        return;
+                    } else if (heading.target.id == "calendar") {
+                        setHeading("/#calendar");
+                    }
+                }
+            })
+        }, {
+            rootMargin: '-70px 0px -75% 0px',
+        });
+
+        document.querySelectorAll("*").forEach((h) => observer.observe(h));
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+      <Template active={heading}>
           <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4">
               <TrafficLight />
               <h1 className="text-3xl font-bold mb-4" id="home">Woods CS is back for 2025</h1>
@@ -84,5 +108,5 @@ export default function Home() {
 
           </div>
       </Template>
-  )
+    )
 }

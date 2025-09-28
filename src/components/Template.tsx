@@ -3,8 +3,32 @@ import {FaAngleDown, FaAngleRight} from "react-icons/fa6";
 import Footer from "./Footer.tsx";
 import Logo from "./Logo.tsx";
 
-export default function Template({children = []} : {children?: React.ReactNode}) {
+const links = [
+    {
+        title: "Home",
+        href: "/",
+        className: "nav-link hover:text-brand",
+    },
+    {
+        title: "Calendar",
+        href: "/#calendar",
+        className: "nav-link hover:text-brand",
+    },
+    {
+        title: "Meeting Notes",
+        href: "/meeting-notes",
+        className: "nav-link hover:text-brand",
+    },
+    {
+        title: "Game Jam 2025",
+        href: "/game-jam",
+        className: "nav-link gradient-text text-to-emerald-300 text-from-brand font-black",
+    },
+];
+
+export default function Template({children = [], active = ""} : {children?: React.ReactNode, active?: string}) {
     const [ navOpen, setNavOpen ] = React.useState(false);
+
     return <div className="px-4 lg:py-4 flex h-full mx-auto justify-center items-start flex-col lg:flex-row lg:gap-8">
         <nav className="z-50 p-4 shadow-2xl bg-neutral-950/90 text-left sticky top-0 lg:top-4 w-full lg:w-auto shrink-0"
         >
@@ -17,18 +41,11 @@ export default function Template({children = []} : {children?: React.ReactNode})
             <div className={"transition-[grid-template-rows] ease-in-out overflow-hidden duration-200 grid sm:block " + (navOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                 <div className="min-h-0 font-light">
                     <ul className="flex flex-col ml-0 sm:flex-row lg:flex-col lg:ml-20 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
-                        <li><a href="/#home" className="navLink hover:text-brand">
-                            <FaAngleRight />Home
-                        </a></li>
-                        <li><a href="/#calendar" className="navLink hover:text-brand">
-                            <FaAngleRight />Calendar
-                        </a></li>
-                        <li><a href="/meeting-notes" className="navLink hover:text-brand">
-                            <FaAngleRight />Meeting Notes
-                        </a></li>
-                        <li><a href="/game-jam" className="navLink font-black gradient-text text-to-emerald-300 text-from-brand">
-                            <FaAngleRight />Game Jam 2025
-                        </a></li>
+                        { links.map((link) => <li key={link.href} >
+                            <a href={link.href} className={link.href === active ? "nav-link active" : link.className}>
+                                <FaAngleRight/>{link.title}
+                            </a>
+                        </li>)}
                     </ul>
                 </div>
             </div>

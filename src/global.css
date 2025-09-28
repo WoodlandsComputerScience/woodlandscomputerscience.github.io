@@ -1,11 +1,7 @@
 @import "tailwindcss";
-@import "@fontsource/jetbrains-mono/300.css";
-@import "@fontsource/jetbrains-mono";
-@import "@fontsource/jetbrains-mono/500.css";
-@import "@fontsource/jetbrains-mono/600.css";
-@import "@fontsource/jetbrains-mono/700.css";
-@import "@fontsource/jetbrains-mono/800.css";
-@custom-variant dark (*);
+@import "@fontsource/jetbrains-mono/latin.css";
+@import "@fontsource/jetbrains-mono/latin-italic.css";
+
 @theme {
     --color-brand: #17a71b;
     --color-foreground-dimmed: var(--color-neutral-400);
@@ -71,13 +67,19 @@
 }
 
 @layer components {
-    .navLink {
+    .nav-link {
         display: flex;
         @apply gap-2;
         text-decoration: none;
         transition: color 75ms ease-in;
         align-items: center;
     }
+    .nav-link.active {
+        font-weight: bold;
+        color: white;
+        font-style: italic;
+    }
+
     .btn {
         display: inline-flex;
         flex-direction: row;
@@ -94,6 +96,7 @@
         @apply min-h-4;
         @apply min-w-4;
     }
+
     .gradient-text {
         background-image: linear-gradient(to right, var(--from-color) 0%, var(--to-color) 33%, var(--from-color) 67%, var(--to-color) 100%);
         background-clip: text;
