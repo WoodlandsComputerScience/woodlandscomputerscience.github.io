@@ -72,13 +72,6 @@
     @apply gap-3;
     box-sizing: border-box;
     align-items: center;
-    * {
-        display: inline-flex;
-        flex-direction: row;
-        @apply gap-3;
-        box-sizing: border-box;
-        align-items: center;
-    }
     svg {
         @apply min-h-4;
         @apply min-w-4;
