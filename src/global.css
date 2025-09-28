@@ -41,6 +41,9 @@
     strong {
         color: var(--color-foreground-bright);
     }
+    [id] {
+        @apply scroll-mt-24 md:scroll-mt-32 lg:scroll-mt-2;
+    }
 }
 
 /*noinspection CssOverwrittenProperties*/
