@@ -6,8 +6,8 @@ interface Meeting {
     details: React.ReactNode;
 }
 
-function meetingTime(date: string) : Date {
-    return new Date(date + "T11:30:00-05:00");
+export function meetingTime(date: string) : Date {
+    return new Date(date + "T11:00:00-05:00");
 }
 
 const meetings : Meeting[] = [
@@ -71,13 +71,13 @@ export default function Meetings () {
                     textClass = "text-white";
                 } else if (isBefore(meeting.date, today)) {
                     // past
-                    indicatorClass = "bg-white";
+                    indicatorClass = "bg-foreground-dimmed";
                     dateClass = "text-sm text-foreground-dimmed";
                     titleClass = "text-lg text-foreground-dimmed";
                     textClass = "text-foreground-dimmed";
                 } else {
                     // future
-                    indicatorClass = "bg-neutral-400";
+                    indicatorClass = "bg-foreground-dimmed";
                     dateClass = "text-sm text-foreground-dimmed";
                     titleClass = "text-lg text-foreground-dimmed";
                     textClass = "text-foreground-dimmed";

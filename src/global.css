@@ -66,6 +66,25 @@
     100% { color: var(--from-color); }
 }
 
+@utility icon-text {
+    display: inline-flex;
+    flex-direction: row;
+    @apply gap-3;
+    box-sizing: border-box;
+    align-items: center;
+    * {
+        display: inline-flex;
+        flex-direction: row;
+        @apply gap-3;
+        box-sizing: border-box;
+        align-items: center;
+    }
+    svg {
+        @apply min-h-4;
+        @apply min-w-4;
+    }
+}
+
 @layer components {
     .nav-link {
         display: flex;
@@ -81,20 +100,12 @@
     }
 
     .btn {
-        display: inline-flex;
-        flex-direction: row;
+        @apply icon-text;
         border-color: var(--color-foreground);
         color: var(--color-foreground);
-        box-sizing: border-box;
         text-decoration: none;
-        @apply gap-2;
-        align-items: center;
         @apply rounded-full;
         padding: calc(2*var(--spacing)) calc(4*var(--spacing));
-    }
-    .btn svg {
-        @apply min-h-4;
-        @apply min-w-4;
     }
 
     .gradient-text {
@@ -113,5 +124,17 @@
     }
     a.gradient-text:hover svg {
         animation: gradient-link-icon-hover 1s infinite linear;
+    }
+
+    details {
+        @apply mb-4;
+    }
+    summary {
+        @apply pb-1 mb-2;
+        cursor: pointer;
+        font-weight: 500;
+        font-style: italic;
+        color: var(--color-foreground);
+        border-bottom: 2px solid var(--color-foreground);
     }
 }
