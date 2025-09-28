@@ -4,8 +4,6 @@ import GameJamCountdown from "./components/GameJamCountdown.tsx";
 import {FaRegClock} from "react-icons/fa6";
 import Meetings from "./components/Meetings.tsx";
 import {LuCherry} from "react-icons/lu";
-import {DISCORD_URL} from "./Config.ts";
-import {FaExternalLinkAlt} from "react-icons/fa";
 
 export default function GameJamPage() {
 
@@ -35,8 +33,7 @@ export default function GameJamPage() {
                             </p>
                             <p>
                                 Join us in Room 100 for lessons on how to use the Godot game engine, and feel free to ask on
-                                our <a href={DISCORD_URL} className="icon-text">Discord <FaExternalLinkAlt /></a> for
-                                help on any challenges you encounter.
+                                on Discord for help on any challenges you encounter.
                             </p>
                         </div>
                         <hr className="my-8" />

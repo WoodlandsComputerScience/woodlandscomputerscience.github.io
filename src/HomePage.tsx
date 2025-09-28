@@ -1,8 +1,7 @@
 import Template from "./components/Template.tsx";
 import TrafficLight from "./components/TrafficLight.tsx";
 import Meetings, {nextMeeting} from "./components/Meetings.tsx";
-import {FaAngleRight, FaDiscord} from "react-icons/fa6";
-import {DISCORD_URL} from "./Config.ts";
+import {FaAngleRight} from "react-icons/fa6";
 import {format, isToday} from "date-fns";
 import * as React from "react";
 import {useEffect} from "react";
@@ -54,7 +53,6 @@ export default function HomePage() {
                   <p>Beginning programmers or those interested in CS are encouraged to attend!</p>
                   <div className="flex gap-4 items-start mt-4 max-w-full flex-wrap">
                       <a href="#calendar" className="btn bg-brand text-white font-bold">See What's Happening <FaAngleRight /></a>
-                      <a href={DISCORD_URL} className="btn bg-social-discord text-white"><FaDiscord /> Join us on Discord</a>
                   </div>
               </div>
               <hr className="my-8"/>
