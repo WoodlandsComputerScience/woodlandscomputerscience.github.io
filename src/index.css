@@ -1,40 +1,114 @@
 @import "tailwindcss";
+@import "@fontsource/jetbrains-mono/300.css";
+@import "@fontsource/jetbrains-mono";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/600.css";
+@import "@fontsource/jetbrains-mono/700.css";
+@import "@fontsource/jetbrains-mono/800.css";
 @custom-variant dark (*);
 @theme {
     --color-brand: #17a71b;
+    --color-foreground-dimmed: var(--color-neutral-400);
+    --color-foreground: var(--color-neutral-300);
+    --color-foreground-bright: var(--color-neutral-100);
+    --color-social-discord: #5865F2;
     --font-mono: 'JetBrains Mono', monospace;
+}
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        color: var(--color-foreground);
+    }
+    a {
+        text-decoration: underline;
+        color: var(--color-foreground-dimmed);
+    }
+    h1, h2 {
+        color: var(--color-foreground-bright);
+    }
+    @variant dark {
+        p, li {
+            color: var(--color-foreground);
+        }
+    }
+    ul {
+        display: block;
+        list-style-type: disc;
+        padding-inline-start: 3em;
+    }
+    ul li {
+        padding-inline-start: 0.5rem;
+    }
+    strong, b {
+        font-weight: bold;
+    }
+    strong {
+        color: var(--color-foreground-bright);
+    }
+}
+
+/*noinspection CssOverwrittenProperties*/
+@utility text-from-* {
+    --from-color: --value(--color-*);
+    --from-color: --value([color]);
+}
+
+/*noinspection CssOverwrittenProperties*/
+@utility text-to-* {
+    --to-color: --value(--color-*);
+    --to-color: --value([color]);
+}
+
+@keyframes gradient-link-hover {
+    0% { background-position-x: right; }
+    100% { background-position-x: left; }
+}
+
+@keyframes gradient-link-icon-hover {
+    0% { color: var(--from-color); }
+    50% { color: var(--to-color); }
+    100% { color: var(--from-color); }
 }
 
 @layer components {
+    .navLink {
+        display: flex;
+        @apply gap-2;
+        text-decoration: none;
+        transition: color 75ms ease-in;
+        align-items: center;
+    }
     .btn {
         display: inline-flex;
-        border-radius: calc(infinity * 1px);;
-        color: white;
-        padding: calc(2*var(--spacing)) calc(3*var(--spacing));
+        flex-direction: row;
+        border-color: var(--color-foreground);
+        color: var(--color-foreground);
+        box-sizing: border-box;
+        text-decoration: none;
+        @apply gap-2;
+        align-items: center;
+        @apply rounded-full;
+        padding: calc(2*var(--spacing)) calc(4*var(--spacing));
     }
-
-    .primary {
-        background-color: var(--color-brand);
-        font-weight: 600;
+    .btn svg {
+        @apply min-h-4;
+        @apply min-w-4;
     }
-
-    .hp-link {
-        background-image:linear-gradient(to right, var(--color-purple-400), var(--color-cyan-400) 66.66%, var(--color-purple-400));
+    .gradient-text {
+        background-image: linear-gradient(to right, var(--from-color) 0%, var(--to-color) 33%, var(--from-color) 67%, var(--to-color) 100%);
         background-clip: text;
         color: transparent;
         background-size: 300% 100%;
         background-position-x: right;
-        transition: all 250ms ease-in-out;
-        font-weight: 900;
     }
-    .hp-link:hover {
-        background-position-x: right 100%;
+
+    a.gradient-text:hover {
+        animation: gradient-link-hover 1s infinite linear;
     }
-    .hp-link .lucide {
-        transition: all 250ms ease-in-out;
-        color: var(--color-cyan-400);
+    .gradient-text svg {
+        color: var(--from-color);
     }
-    .hp-link:hover .lucide {
-        color: var(--color-purple-400);
+    a.gradient-text:hover svg {
+        animation: gradient-link-icon-hover 1s infinite linear;
     }
 }
