@@ -59,9 +59,9 @@ export default function GameJamPage() {
                             your game's premise.
                         </details>
                     </div>
-                    <div className="w-auto flex flex-col sm:flex-row xl:flex-col gap-8 xl:sticky xl:top-8 xl:max-w-3/7 mb-8 xl:my-0 xl:mx-8">
-                        <GameJamCountdown />
+                    <div className="w-auto flex flex-col sm:w-xl lg:w-auto sm:flex-row xl:flex-col gap-8 xl:sticky xl:top-8 xl:max-w-3/7 mb-8 xl:my-0 xl:mx-8">
                         <img alt="Game jam poster" src="/GameJam.png" className="max-w-full sm:max-w-1/2 xl:max-w-full" />
+                        <GameJamCountdown />
                     </div>
                 </div>
             </div>
