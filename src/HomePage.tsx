@@ -74,7 +74,7 @@ export default function HomePage() {
                           <h1 className="text-3xl font-bold" id="calendar">Calendar</h1>
                           <div className="mb-4">
                               <p>Meetings are held weekly every Monday.</p>
-                              {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!.</strong></p>}
+                              {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!</strong></p>}
                               {nextMeeting && !isToday(nextMeeting.date) && <p>
                                   Our next meeting will be on <strong>{format(nextMeeting.date, "MMMM d")}</strong>.
                               </p>}
