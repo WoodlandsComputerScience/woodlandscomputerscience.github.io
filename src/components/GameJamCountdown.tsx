@@ -25,11 +25,11 @@ export default function GameJamCountdown() {
     }, [])
 
 
-    return <div className="border-2 border-foreground-dimmed rounded-4xl p-8 flex flex-col select-none bg-neutral-900 justify-between">
+    return <div className="@container w-full border-2 border-foreground-dimmed rounded-4xl p-8 flex flex-col select-none bg-neutral-900 justify-between">
         <span className="text-xl text-foreground-dimmed text-center">
             {concluded ? "The game jam has concluded!" : "Submissions are due in"}
         </span>
-        <span className="text-4xl sm:text-6xl xl:text-7xl font-black text-white mt-4 mb-8 text-center">{countdown}</span>
+        <span className="text-4xl @xs:text-7xl font-black text-white text-center my-8">{countdown}</span>
         <span className="text-lg text-foreground-dimmed text-center">{!concluded && "(Monday, October 13)"}</span>
     </div>
 }
