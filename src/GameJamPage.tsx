@@ -1,12 +1,18 @@
 import Template from "./components/Template.tsx";
 import TrafficLight from "./components/TrafficLight.tsx";
-import GameJamCountdown from "./components/GameJamCountdown.tsx";
-import {FaRegClock} from "react-icons/fa6";
+import GameJamCountdown, {gameJamEndDate} from "./components/GameJamCountdown.tsx";
+import {FaAngleRight, FaRegClock} from "react-icons/fa6";
 import Meetings from "./components/Meetings.tsx";
 import {LuCherry} from "react-icons/lu";
+import { isPast} from "date-fns";
+import {useEffect, useState} from "react";
 
 export default function GameJamPage() {
-
+    const [concluded, setConcluded] = useState(false);
+    useEffect(() => {
+        const interval = setInterval(() => setConcluded(isPast(gameJamEndDate)), 1000);
+        return () => clearInterval(interval);
+    });
 
     return (
         <Template active="/game-jam">
@@ -35,6 +41,15 @@ export default function GameJamPage() {
                                 Join us in Room 100 for lessons on how to use the Godot game engine, and feel free to ask on
                                 on Discord for help on any challenges you encounter.
                             </p>
+                            {!concluded &&
+                                <div className="flex flex-col gap-4 items-start mt-4 max-w-full flex-wrap">
+                                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScMlYuaazZTfdOUaqZgT0fYL_2F8TTW5Ihji6-xBKGuSN2a_w/viewform"
+                                       className="btn border-2">Submit a Game <FaAngleRight /></a>
+                                    <span className="text-foreground-dimmed text-sm italic">
+                                    Make sure you are signed into your PDSB account
+                                </span>
+                                </div>
+                            }
                         </div>
                         <hr className="my-8" />
                         <h1 className="text-3xl font-bold mb-4">Schedule</h1>

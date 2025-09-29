@@ -7,7 +7,7 @@ interface Meeting {
 }
 
 export function meetingTime(date: string) : Date {
-    return new Date(date + "T11:00:00-05:00");
+    return new Date(date + "T11:00:00");
 }
 
 const meetings : Meeting[] = [
