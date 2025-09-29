@@ -7,6 +7,6 @@ export default function Footer() {
             <a href={INSTAGRAM_URL} className="btn"><FaInstagram /></a>
             <a href={GITHUB_URL} className="btn"><FaGithub /></a>
         </div>
-        <span className="ml-4">{new Date().getFullYear()} Woodlands Computer Science</span>
+        <span className="ml-4 text-right">{new Date().getFullYear()} Woodlands Computer Science</span>
     </div>
 }
