@@ -1,6 +1,6 @@
 import Template from "./components/Template.tsx";
 import TrafficLight from "./components/TrafficLight.tsx";
-import Meetings, {nextMeeting} from "./components/Meetings.tsx";
+import Meetings, {type Meeting, getNextMeeting} from "./components/Meetings.tsx";
 import {FaAngleRight} from "react-icons/fa6";
 import {format, isToday} from "date-fns";
 import * as React from "react";
@@ -9,7 +9,11 @@ import {useEffect} from "react";
 export default function HomePage() {
     // Keep active heading highlighted in navbar
     const [ heading, setHeading ] = React.useState("/#");
+    const [ nextMeeting, setNextMeeting ] = React.useState<Meeting | undefined>(undefined);
     useEffect(() => {
+        setNextMeeting(getNextMeeting());
+
+
         const observer = new IntersectionObserver((headings) => {
             headings.forEach((heading) => {
                 if (heading.isIntersecting) {

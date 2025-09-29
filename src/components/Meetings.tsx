@@ -1,6 +1,8 @@
-import {format, isBefore } from "date-fns";
+import {format, isFuture, isPast} from "date-fns";
+import * as React from "react";
+import {useEffect} from "react";
 
-interface Meeting {
+export interface Meeting {
     date: Date;
     title: string;
     details: React.ReactNode;
@@ -38,24 +40,14 @@ const meetings : Meeting[] = [
     },
 ];
 
-
-let prev: Meeting = meetings[0];
-const today = new Date();
-let next: Meeting | undefined;
-for (const event of meetings) {
-    if (isBefore(event.date, today)) {
-        prev = event;
-    } else {
-        next = event;
-        break;
-    }
-}
-
-export const previousMeeting = prev;
-export const nextMeeting = next;
+export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));
 
 export default function Meetings () {
-    // @ts-ignore
+    const [ nextMeeting, setNextMeeting ] = React.useState<Meeting | undefined>(undefined);
+    useEffect(() => {
+        setNextMeeting(getNextMeeting());
+    }, []);
+        // @ts-ignore
     return <div className="flex flex-col gap-8">
         <ol className="flex flex-col gap-8 border-l-1 border-foreground-dimmed ml-2 list-none">
             {meetings.map((meeting: Meeting) => {
@@ -63,13 +55,14 @@ export default function Meetings () {
                 let dateClass: string;
                 let textClass: string;
                 let indicatorClass: string;
+                const next = nextMeeting;
                 if (meeting == next) {
                     // current
                     indicatorClass = "bg-white";
                     dateClass = "text-sm text-foreground";
                     titleClass = "text-lg text-white";
                     textClass = "text-white";
-                } else if (isBefore(meeting.date, today)) {
+                } else if (isPast(nextMeeting?.date ?? 0)) {
                     // past
                     indicatorClass = "bg-foreground-dimmed";
                     dateClass = "text-sm text-foreground-dimmed";
