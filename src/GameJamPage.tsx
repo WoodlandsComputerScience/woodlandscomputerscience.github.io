@@ -32,7 +32,7 @@ export default function GameJamPage() {
                         <hr className="my-8" />
                         <div className="flex flex-col gap-4">
                             <p>
-                                This year, we want you to think of duos, doubles, and siblings&mdash;&mdash;things
+                                This year, we want you to think of duos, doubles, and twins&mdash;&mdash;things
                                 that can't exist alone.
                                 Whether it's intertwined characters, puzzles with matching parts, or parallel dimensions,
                                 your challenge is to build a game around the power of pairs.
