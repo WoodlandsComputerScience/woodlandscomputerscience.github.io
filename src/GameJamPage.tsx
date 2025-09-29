@@ -52,10 +52,10 @@ export default function GameJamPage() {
                             }
                         </div>
                         <hr className="my-8" />
-                        <h1 className="text-3xl font-bold mb-4">Schedule</h1>
+                        <h2 className="text-3xl font-bold mb-4">Schedule</h2>
                         <Meetings />
                         <hr className="my-8" />
-                        <h1 className="text-3xl font-bold mb-4">FAQ</h1>
+                        <h2 className="text-3xl font-bold mb-4">FAQ</h2>
                         <details name="faq">
                             <summary>Do I have to use the Godot engine?</summary>
                             Nope! You are free to use any engine you wish. However, club lessons will be focused on Godot
