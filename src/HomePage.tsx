@@ -63,7 +63,7 @@ export default function HomePage() {
               <div className="flex flex-col-reverse xl:flex-row items-start">
                   <div>
                       <div className="flex flex-col gap-4 max-w-3xl items-start">
-                          <h1 className="text-3xl font-bold" id="game-jam">Game Jam 2025</h1>
+                          <h2 className="text-3xl font-bold" id="game-jam">Game Jam 2025</h2>
                           <p>This month, we're once again hosting our annual Game Jam! The theme this year is <strong>Comes in Pairs</strong>.</p>
                           <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
                               Come join us in Room 100, where we'll teach you how to use the <strong>Godot Game Engine</strong>
@@ -73,7 +73,7 @@ export default function HomePage() {
                       </div>
                       <hr  className="my-8"/>
                       <div className="flex flex-col gap-4">
-                          <h1 className="text-3xl font-bold" id="calendar">Calendar</h1>
+                          <h2 className="text-3xl font-bold" id="calendar">Calendar</h2>
                           <div className="mb-4">
                               <p>Meetings are held weekly every Monday.</p>
                               {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!</strong></p>}
@@ -87,7 +87,7 @@ export default function HomePage() {
                   <img alt="Game jam poster" src="/GameJam.png" className="xl:sticky xl:top-8 w-2xl md:max-w-3/7 mb-8 xl:my-0 xl:mx-8" />
               </div>
               <hr className="my-8"/>
-              <h1 className="text-3xl font-bold mb-4">hack::peel</h1>
+              <h2 className="text-3xl font-bold mb-4">hack::peel</h2>
               <div className="flex flex-col-reverse xl:flex-row items-start justify-between">
                   <article className="flex flex-col gap-4 items-start max-w-3xl">
                       <p>
