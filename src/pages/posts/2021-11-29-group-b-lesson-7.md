@@ -9,12 +9,6 @@ description: |
 ---
 Welcome to the fourth meeting of group B! In this meeting, we'll go through the core functionality of our code runner Discord bot.
 
-## Today's Plan
-- <h5><a href="#first-prototype">First Prototype</a></h5>
-- <h5><a href="#code-walkthrough">Code Walkthrough</a></h5>
-- <h5><a href="#finding-improvements-and-bugs">Finding Improvements and Bugs</a></h5>
-- <h5><a href="#challenges">Challenges!</a></h5>
-
 ## First Prototype
 
 The **first prototype** of our code runner Discord bot has been completed!
@@ -23,21 +17,21 @@ It has the core functionality outlined in the [previous meeting](http://localhos
 
 The bot will try to run *any* code you give it. Try your hardest to break it!
 
-#### Instructions
+### Instructions
 
-There's only one command to remember, which is **!run**.
-
-!run \<language\> \<language version\>  
-
-\`​\`​\`  
-{code}  
-\`​\`​\`  
+There's only one command to remember, which is `!run`.
+````
+!run <language> <language version>  
+``` 
+{code}
+```
+````
 
 Discord wraps code blocks using **three backticks**. That's the button at the top left of your keyboard below the escape key.
 
 <img src="/assets/img/group-b/lesson-7/discord-bot-example.png" alt="" class="post-img-large">
 
-##### *An example of a correctly formatted message.*
+*An example of a correctly formatted message.*
 <br>
 
 ## Code Walkthrough
@@ -48,7 +42,7 @@ As all of the code is open-source, you can read each part of it and even suggest
 
 ## Finding Improvements and Bugs
 
-The bot still isn't perfect. We still have many [future features](http://localhost:4000/group-b/2021/11/21/group-b-lesson-6.html#future-features) in mind that we haven't started implementing. If you have any suggestions for additional quality of life changes, feel free to bring it up. Bugs are also (unfortunately) sure to pop up. In fact, we've already come across one...
+The bot still isn't perfect. We still have many [future features](/posts/2021-11-22-group-b-lesson-6.html#future-features) in mind that we haven't started implementing. If you have any suggestions for additional quality of life changes, feel free to bring it up. Bugs are also (unfortunately) sure to pop up. In fact, we've already come across one...
 
 <img src="/assets/img/group-b/lesson-7/discord-bot-bug-1.png" alt="" class="post-img-large">
 

@@ -1,6 +1,7 @@
 import * as React from "react";
 import {FaAngleDown, FaAngleRight} from "react-icons/fa6";
 import Logo from "./Logo.tsx";
+import {useEffect} from "react";
 
 const links = [
     {
@@ -34,6 +35,14 @@ export default function Template({children, active} : TemplateProps) {
     const [ navOpen, setNavOpen ] = React.useState(false);
     // we have to disable animating the drawer when the user clicks a link, to prevent it from breaking scroll
     const [ animate, setAnimate ] = React.useState(true);
+
+    useEffect(() => {
+        document.querySelectorAll("a").forEach(a => {
+            if (a.href.includes("http") && !a.href.includes("://" + location.hostname)) {
+                a.target = "_blank";
+            }
+        });
+    }, []);
 
     const drawerToggleCallback = () => {
         setAnimate(true);
@@ -70,7 +79,7 @@ export default function Template({children, active} : TemplateProps) {
                 </div>
             </div>
         </nav>
-        <main className={`flex flex-col w-7xl max-w-full lg:mr-4 gap-4`} onClick={() => setNavOpen(false)}>
+        <main className={`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4`} onClick={() => setNavOpen(false)}>
             {children}
         </main>
     </div>

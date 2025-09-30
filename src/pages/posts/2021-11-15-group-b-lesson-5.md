@@ -10,12 +10,6 @@ description: |
 ---
 Welcome to the second meeting of group B!
 
-## Today's Plan
-- <h5><a href="#what-is-web-development">What is Web Development?</a></h5>
-- <h5><a href="#frontend-and-backend">Frontend and Backend</a></h5>
-- <h5><a href="#languages-and-frameworks">Languages and Frameworks</a></h5>
-- <h5><a href="#introduction-to-html-and-css">Introduction to HTML and CSS</a></h5>
-
 ## What is Web Development?
 
 Websites. You probably use them every day. You're on a website right now! What are they though? And how can *you* make websites? 
@@ -24,7 +18,7 @@ A website is a collection of web pages that are available to the Internet or an 
 
 Web *development*, meanwhile, is the process of creating websites. The word "development" may lead you to think that web development is just about coding. That isn't the case, similar to how software development is, as we explored in the last meeting. In fact, it's discouraged to go straight into coding a website up, as it will lead you to get confused and write more code than needed.
 
-<img src="/assets/img/group-b/lesson-5/webdev-process.png" alt="" class="post-img float-right">
+<img src="/assets/img/group-b/lesson-5/webdev-process.png" alt="">
 
 The process of web development includes
 1. Planning
@@ -66,12 +60,13 @@ Going to `https://cs-club.com` would render the `index.html` HTML file (as most 
 The website you're on right now, the Woodlands CS website, is static. Examples of static websites include most personal websites.
 
 | Pros      | Cons |
-| ----------- | ----------- |
+|:------------|:------------|
 | Secure      | No user-provided data can be stored       |
 | Fast   | Requires knowledge of web development to update       |
 | Easy to host | |
 
 <br>
+
 #### Dynamic Websites
 
 <img src="/assets/img/group-b/lesson-5/static-dynamic.jpeg" alt="" class="post-img float-right">
@@ -96,7 +91,7 @@ Presented below are some commonly-used languages and frameworks in web developme
 
 
 | Name      | Language | Purpose | Type |
-| ----------- | ----------- | ----------- |
+| ----------- | ----------- | ----------- | ------ |
 | HTML | HTML | Use tags and attributes to create components of webpages. | Frontend |
 | CSS | CSS | Use selectors to style HTML components | Frontend |
 | JavaScript | JavaScript | Make webpages interactive | Frontend |

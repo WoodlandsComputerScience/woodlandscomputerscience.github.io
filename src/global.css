@@ -17,10 +17,10 @@
     }
     a {
         text-decoration: underline;
-        color: var(--color-foreground-bright);
+        color: var(--color-foreground-dimmed);
     }
     a:visited {
-        color: var(--color-foreground-dimmed);
+        color: var(--color-purple-300);
     }
     h1, h2 {
         color: var(--color-foreground-bright);
@@ -66,12 +66,25 @@
         @apply px-2 py-1;
     }
 
+    th {
+        @apply border-b-2 border-b-foreground;
+    }
+
+    blockquote, blockquote * {
+        color: var(--color-foreground-dimmed);
+        font-style: italic;
+        font-weight: 500;
+    }
+    blockquote {
+        @apply ps-6 border-l-4 border-b-foreground-dimmed;
+    }
+
     .blog-post {
         img {
-            @apply max-w-xs;
+            @apply max-h-120 max-w-full;
         }
         pre {
-            @apply ml-8;
+            @apply ml-8 p-2;
         }
         h1 {
             @apply text-4xl mb-4;
@@ -84,6 +97,10 @@
         h3 {
             @apply text-xl mb-2 mt-4;
             font-weight: 500;
+        }
+        h4, h5, h6 {
+            @apply text-lg my-2;
+            font-weight: 600;
         }
         p {
             @apply my-3;

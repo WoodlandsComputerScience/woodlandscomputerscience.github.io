@@ -10,13 +10,6 @@ description: |
 ---
 This is the first Group B meeting of Woodlands Computer Science club!
 
-## Overview
-- <h5><a href="#what-is-software-development">What is Software Development?</a></h5>
-- <h5><a href="#development-practices">Development Practices</a></h5>
-- <h5><a href="#agile-practices">Agile Practices</a></h5>
-- <h5><a href="#devops">DevOps</a></h5>
-- <h5><a href="#group-b-plans">Group B Plans</a></h5>
-
 ## What is Software Development?
 <img src="/assets/img/group-b/lesson-4/software-interactions.png" alt="" class="post-img float-right">
 

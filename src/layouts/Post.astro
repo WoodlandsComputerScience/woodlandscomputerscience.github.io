@@ -34,7 +34,7 @@ const toc = buildTOC(headings);
 ---
 <Base title={frontmatter.title} description={frontmatter.description} >
     <Template active="/posts" client:load>
-        <div class="max-w-full w-3xl mx-auto flex flex-col gap-4 blog-post">
+        <div class={"max-w-full mx-auto flex flex-col gap-4 blog-post " + (frontmatter.slides ? "w-full" : "w-3xl")}>
             <Pane className="font-sans font-normal">
                 <a href="/posts/" class="icon-text mb-4"><FaAngleLeft/> Back</a>
                 <article>
@@ -45,12 +45,18 @@ const toc = buildTOC(headings);
                         </time>}
                     </p>
                     <hr />
-                    <nav class="mt-4 mb-8  ml-4 rounded-2xl p-4 border-1 toc border-neutral-700 max-w-sm">
-                        <h2 class="mt-0">Table of Contents</h2>
-                        <ol>
-                            {toc.map(heading => <TableOfContents heading={heading} />)}
-                        </ol>
-                    </nav>
+
+                    {frontmatter.slides &&
+                            <span class="text-yellow-300 my-8 italic">Warning: this content may require a PDSB account.</span>
+                    }
+                    {!frontmatter.slides &&
+                        <nav class="mt-4 mb-8  ml-4 rounded-2xl p-4 border-1 toc border-neutral-700 max-w-sm">
+                            <h2 class="mt-0">Table of Contents</h2>
+                            <ol>
+                                {toc.map(heading => <TableOfContents heading={heading} />)}
+                            </ol>
+                        </nav>
+                    }
                     <slot />
                 </article>
             </Pane>
