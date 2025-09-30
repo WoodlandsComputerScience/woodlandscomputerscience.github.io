@@ -36,7 +36,7 @@ const toc = buildTOC(headings);
     <Template active="/posts" client:load>
         <div class={"max-w-full mx-auto flex flex-col gap-4 blog-post " + (frontmatter.slides ? "w-full" : "w-3xl")}>
             <Pane className="font-sans font-normal">
-                <a href="/posts/" class="btn icon-text mb-4"><FaAngleLeft/> Back</a>
+                <a href="/posts/" class="btn p-0 icon-text mb-4"><FaAngleLeft/> Back</a>
                 <article>
                     <h1>{frontmatter.title}</h1>
                     <p>
