@@ -76,7 +76,7 @@
         font-weight: 500;
     }
     blockquote {
-        @apply ps-6 border-l-4 border-b-foreground-dimmed;
+        @apply ml-8 ps-6 border-l-4 border-b-foreground-dimmed;
     }
 
     .blog-post {
