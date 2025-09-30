@@ -2,6 +2,9 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
 import tailwindcss from '@tailwindcss/vite';
+import remarkToc from 'remark-toc';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,4 +13,8 @@ export default defineConfig({
     plugins: [ tailwindcss() ]
   },
   integrations: [ react() ],
+  markdown: {
+    remarkPlugins: [ [remarkToc, { heading: 'Table of Contents', maxDepth: 3 } ] ],
+    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'append' }]],
+  },
 })

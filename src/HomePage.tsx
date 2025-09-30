@@ -1,10 +1,11 @@
 import Template from "./components/Template.tsx";
-import TrafficLight from "./components/TrafficLight.tsx";
 import Meetings, {type Meeting, getNextMeeting} from "./components/Meetings.tsx";
 import {FaAngleRight} from "react-icons/fa6";
 import {format, isToday} from "date-fns";
 import * as React from "react";
 import {useEffect} from "react";
+import Pane from "./components/Pane.tsx";
+import Footer from "./components/Footer.tsx";
 
 export default function HomePage() {
     // Keep active heading highlighted in navbar
@@ -35,8 +36,7 @@ export default function HomePage() {
 
     return (
       <Template active={heading}>
-          <div className="p-4 shadow-lg bg-neutral-800 rounded-3xl mb-4" id="top">
-              <TrafficLight />
+          <Pane>
               <h1 className="text-3xl font-bold mb-4" id="home">Woods CS is back for 2025</h1>
               <div className="flex flex-col gap-4 items-start max-w-3xl">
                   <p>
@@ -101,9 +101,8 @@ export default function HomePage() {
                   </article>
                   <img alt="hack::peel logo" id="hack-peel" src="/HackPeelLogo.png" className="hidden lg:block w-lg md:max-w-3/4 my-8 xl:my-0 xl:mx-8" />
               </div>
-
-
-          </div>
+          </Pane>
+          <Footer />
       </Template>
     )
 }

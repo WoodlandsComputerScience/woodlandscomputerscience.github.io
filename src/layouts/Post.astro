@@ -1,0 +1,61 @@
+---
+import Pane from "../components/Pane";
+import Base from "./Base.astro";
+import Footer from "../components/Footer";
+import Template from "../components/Template";
+import {formatDate, isValid} from "date-fns";
+import TableOfContents, { type Heading } from "../components/TableOfContents";
+import {FaAngleLeft} from "react-icons/fa6";
+const { frontmatter, headings } = Astro.props;
+const date = new Date(frontmatter.date);
+
+interface RawHeading {
+    depth: number;
+    text: string;
+    slug: string;
+}
+
+function buildTOC(rawHeadings: RawHeading[]): Heading[] {
+    const result: Heading[] = [];
+    const parents: Map<number, Heading> = new Map();
+    for (const rawHeading of rawHeadings) {
+        let heading: Heading | undefined = undefined;
+        if (rawHeading.depth == 2) {
+            result.push(heading={...rawHeading, children: []});
+        } else {
+            parents.get(rawHeading.depth-1)?.children.push(heading={...rawHeading, children: []});
+        }
+        if (heading) parents.set(rawHeading.depth, heading);
+    }
+    return result;
+}
+
+const toc = buildTOC(headings);
+---
+<Base title={frontmatter.title} description={frontmatter.description} >
+    <Template active="/posts" client:load>
+        <div class="max-w-full w-3xl mx-auto flex flex-col gap-4 blog-post">
+            <Pane className="font-sans font-normal">
+                <a href="/posts/" class="icon-text mb-4"><FaAngleLeft/> Back</a>
+                <article>
+                    <h1>{frontmatter.title}</h1>
+                    <p>
+                        {isValid(date) && <time datetime={frontmatter.date}>
+                            {formatDate(date, "MMMM d, yyyy")}
+                        </time>}
+                    </p>
+                    <hr />
+                    <nav class="mt-4 mb-8  ml-4 rounded-2xl p-4 border-1 toc border-neutral-700 max-w-sm">
+                        <h2 class="mt-0">Table of Contents</h2>
+                        <ol>
+                            {toc.map(heading => <TableOfContents heading={heading} />)}
+                        </ol>
+                    </nav>
+                    <slot />
+                </article>
+            </Pane>
+
+            <Footer />
+        </div>
+    </Template>
+</Base>

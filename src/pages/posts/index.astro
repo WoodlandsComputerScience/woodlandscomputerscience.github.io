@@ -1,0 +1,34 @@
+---
+import Pane from "../../components/Pane";
+import Base from "../../layouts/Base.astro";
+import Footer from "../../components/Footer";
+import Template from "../../components/Template";
+import { getCollection } from 'astro:content';
+import {formatDate, formatISO} from "date-fns";
+const posts = (await getCollection('posts')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+---
+<Base title={"Meeting Notes"} description="Woodlands CS Blog and meeting note repository." >
+    <Template active="/posts">
+        <div class="max-w-3xl w-full mx-auto flex flex-col gap-4 blog-post">
+            <Pane className="font-sans font-normal">
+                <h1>Meeting Notes</h1>
+                <p class="mb-8">Welcome to the blog! Club updates, meeting notes, and resources will be posted here.</p>
+                <ul class="list-none p-0">
+                    {posts.map((post, index) => <li>
+                        {index > 0 && <hr class="my-8" />}
+                        <h2><a href={"/posts/" + post.id} class="no-underline">{post.data.title}</a></h2>
+                        <time datetime={formatISO(post.data.date)} class="text-foreground-dimmed">
+                            {formatDate(post.data.date, "d MMMM yyyy")}
+                        </time>
+                        <p>{post.data.description}</p>
+                    </li>)}
+                </ul>
+            </Pane>
+
+            <Footer />
+        </div>
+    </Template>
+</Base>

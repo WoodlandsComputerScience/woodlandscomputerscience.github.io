@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/react": "^4.4.0",
     "@fontsource/jetbrains-mono": "^5.2.6",
     "@tailwindcss/vite": "^4.1.13",
@@ -17,6 +18,9 @@
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-icons": "^5.5.0",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark-toc": "^9.0.0",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {

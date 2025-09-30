@@ -1,6 +1,5 @@
 import * as React from "react";
 import {FaAngleDown, FaAngleRight} from "react-icons/fa6";
-import Footer from "./Footer.tsx";
 import Logo from "./Logo.tsx";
 
 const links = [
@@ -16,7 +15,7 @@ const links = [
     },
     {
         title: "Meeting Notes",
-        href: "/meeting-notes",
+        href: "/posts",
         className: "nav-link hover:text-foreground-bright",
     },
     {
@@ -26,7 +25,12 @@ const links = [
     },
 ];
 
-export default function Template({children = [], active = ""} : {children?: React.ReactNode, active?: string}) {
+export interface TemplateProps {
+    children?: React.ReactNode;
+    active?: string;
+}
+
+export default function Template({children, active} : TemplateProps) {
     const [ navOpen, setNavOpen ] = React.useState(false);
     // we have to disable animating the drawer when the user clicks a link, to prevent it from breaking scroll
     const [ animate, setAnimate ] = React.useState(true);
@@ -66,9 +70,8 @@ export default function Template({children = [], active = ""} : {children?: Reac
                 </div>
             </div>
         </nav>
-        <main className="w-full flex flex-col max-w-7xl lg:mr-4" onClick={() => setNavOpen(false)}>
+        <main className={`flex flex-col w-7xl max-w-full lg:mr-4 gap-4`} onClick={() => setNavOpen(false)}>
             {children}
-            <Footer />
         </main>
     </div>
 }
