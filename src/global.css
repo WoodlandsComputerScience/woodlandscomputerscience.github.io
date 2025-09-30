@@ -64,6 +64,9 @@
     }
 
     .blog-post {
+        img {
+            @apply max-w-xs;
+        }
         pre {
             @apply ml-8;
         }
