@@ -35,6 +35,9 @@
         list-style-type: disc;
         @apply pl-8;
     }
+    ul ul {
+        list-style-type: circle;
+    }
     ol {
         display: block;
         list-style-type: decimal;
@@ -86,7 +89,10 @@
             @apply my-3;
         }
         .toc ol {
-            list-style: none;
+            list-style: disc;
+        }
+        .toc ol ol {
+            list-style: circle;
         }
         .toc a {
             color: var(--color-foreground-dimmed);
