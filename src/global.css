@@ -160,6 +160,9 @@
         transition: color 75ms ease-in;
         align-items: center;
     }
+    .nav-link:visited {
+        color: var(--color-foreground-dimmed);
+    }
     .nav-link.active {
         font-weight: bold;
         color: white;
