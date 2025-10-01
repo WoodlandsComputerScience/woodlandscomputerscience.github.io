@@ -68,7 +68,8 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                 let textClass: string;
                 let indicatorClass: string;
                 const next = nextMeeting;
-                if (showNextMeeting && meeting == next) {
+                const highlight = showNextMeeting && meeting == next;
+                if (highlight) {
                     // current
                     indicatorClass = "bg-white";
                     dateClass = "text-sm text-foreground";
@@ -89,7 +90,7 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                 }
                 return <li className="flex ps-0" key={meeting.date.toString()}>
                     <span className="flex w-3 h-3 -ml-1.5 mt-1">
-                        {showNextMeeting && meeting == next && <span className={indicatorClass + " rounded-full w-3 h-3 absolute inline-flex motion-safe:animate-ping "} />}
+                        {highlight && <span className={indicatorClass + " rounded-full w-3 h-3 absolute inline-flex motion-safe:animate-ping "} />}
                         <span className={indicatorClass + " rounded-full w-3 h-3 relative inline-flex"} />
                     </span>
                     <div className={"pl-4 "}>
