@@ -21,7 +21,7 @@ const posts = (await getCollection('posts')).sort(
                 <ul class="list-none p-0 m-0">
                     {posts.map((post, index) => <li class="ps-0">
                         {index > 0 && <hr class="my-8" />}
-                        <h3><a href={"/posts/" + post.id} class="no-underline">{post.data.title}</a></h3>
+                        <h3><a href={"/posts/" + post.id}>{post.data.title}</a></h3>
                         <time datetime={formatISO(post.data.date)} class="text-foreground-dimmed">
                             {formatDate(post.data.date, "d MMMM yyyy")}
                         </time>
