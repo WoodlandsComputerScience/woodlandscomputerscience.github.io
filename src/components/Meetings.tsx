@@ -89,7 +89,7 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                 }
                 return <li className="flex ps-0" key={meeting.date.toString()}>
                     <span className="flex w-3 h-3 -ml-1.5 mt-1">
-                        {meeting == next && <span className={indicatorClass + " rounded-full w-3 h-3 absolute inline-flex motion-safe:animate-ping "} />}
+                        {showNextMeeting && meeting == next && <span className={indicatorClass + " rounded-full w-3 h-3 absolute inline-flex motion-safe:animate-ping "} />}
                         <span className={indicatorClass + " rounded-full w-3 h-3 relative inline-flex"} />
                     </span>
                     <div className={"pl-4 "}>
