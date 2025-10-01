@@ -2,20 +2,21 @@
 import Pane from "../../components/Pane";
 import Base from "../../layouts/Base.astro";
 import Footer from "../../components/Footer";
-import Template from "../../components/Template";
 import { getCollection } from 'astro:content';
 import {formatDate, formatISO} from "date-fns";
+import Nav from "../../components/Nav";
 const posts = (await getCollection('posts')).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 
 ---
 <Base title={"Meeting Notes"} description="Woodlands CS Blog and meeting note repository." >
-    <Template active="/posts">
+    <Nav client:load active="/posts" />
+    <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
         <div class="max-w-3xl w-full mx-auto flex flex-col gap-4 blog-post">
             <Pane className="font-sans font-normal">
                 <h1>Meeting Notes</h1>
-                <p class="mb-8">Welcome to the blog! Club updates, meeting notes, and resources will be posted here.</p>
+                <p class="mb-8">Club updates, meeting notes, and resources will be posted here.</p>
                 <h2>Latest Posts</h2>
                 <ul class="list-none p-0 m-0">
                     {posts.map((post, index) => <li class="ps-0">
@@ -31,5 +32,5 @@ const posts = (await getCollection('posts')).sort(
 
             <Footer />
         </div>
-    </Template>
+    </main>
 </Base>

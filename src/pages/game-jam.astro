@@ -1,17 +1,72 @@
 ---
 import "../global.css";
-import GameJamPage from "../GameJamPage";
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav";
+import {FaRegClock} from "react-icons/fa6";
+import {LuCherry} from "react-icons/lu";
+import Meetings from "../components/Meetings";
+import Pane from "../components/Pane";
+import {GameJamActions, GameJamCountdown} from "../components/GameJam";
+import gameJamPoster from "../assets/GameJam.png";
+import {Image} from "astro:assets";
 ---
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Woodlands CS 2025 game jam, from September 16 to October 13.">
-    <title>Game Jam 2025 | Woodlands Computer Science</title>
-</head>
-<body class="bg-neutral-950 font-mono font-light">
-    <GameJamPage client:load />
-</body>
-</html>
+
+<Base title="Game Jam 2025 | Woodlands Computer Science" description="Woodlands CS 2025 game jam, from September 16 to October 13.">
+    <Nav client:load active="/game-jam" />
+    <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
+        <Pane>
+            <div class="flex flex-col-reverse xl:flex-row items-start justify-between">
+                <div class="flex flex-col grow">
+                    <h1 class="text-5xl font-bold mb-4">Game Jam 2025</h1>
+                    <div class="text-xl flex flex-col gap-4">
+                        <p class="flex flex-row items-start gap-4">
+                            <strong class="icon-text"><FaRegClock />When: </strong> September 16 to October 13
+                        </p>
+                        <p class="flex flex-row items-start gap-4"><strong class="icon-text">
+                            <LuCherry />Theme: </strong>Comes in Pairs
+                        </p>
+                    </div>
+                    <hr class="my-8" />
+                    <div class="flex flex-col gap-4">
+                        <p>
+                            This year, we want you to think of duos, doubles, and twins&mdash;&mdash;things
+                            that can't exist alone.
+                            Whether it's intertwined characters, puzzles with matching parts, or parallel dimensions,
+                            your challenge is to build a game around the power of pairs.
+                        </p>
+                        <p>
+                            Join us in Room 100 for lessons on how to use the Godot game engine, and feel free to ask on
+                            on Discord for help on any challenges you encounter.
+                        </p>
+
+                        <GameJamActions client:load />
+
+                    </div>
+                    <hr class="my-8" />
+                    <h2 class="text-3xl font-bold mb-4">Schedule</h2>
+                    <Meetings />
+                    <hr class="my-8" />
+                    <h2 class="text-3xl font-bold mb-4">FAQ</h2>
+                    <details name="faq">
+                        <summary>Do I have to use the Godot engine?</summary>
+                        Nope! You are free to use any engine you wish. However, club lessons will be focused on Godot
+                        this year.
+                    </details>
+                    <details name="faq">
+                        <summary>How large can my team be?</summary>
+                        Traditionally, teams have been 4 people, but that is not a hard limit.
+                    </details>
+                    <details name="faq">
+                        <summary>Do I have to follow the theme?</summary>
+                        The theme is meant to inspire rather than constrain. Use it as a starting point when brainstorming
+                        your game's premise.
+                    </details>
+                </div>
+                <div class="w-auto flex flex-col sm:w-xl lg:w-auto sm:flex-row xl:flex-col gap-8 xl:sticky xl:top-8 xl:max-w-3/7 mb-8 xl:my-0 xl:mx-8">
+                    <Image alt="Game jam poster" src={gameJamPoster} class="max-w-full sm:max-w-1/2 xl:max-w-full" />
+                    <GameJamCountdown client:load />
+                </div>
+            </div>
+        </Pane>
+    </main>
+</Base>

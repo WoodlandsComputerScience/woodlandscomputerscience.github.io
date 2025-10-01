@@ -1,4 +1,4 @@
-import {format, isFuture, isPast} from "date-fns";
+import {format, isFuture, isPast, isToday} from "date-fns";
 import * as React from "react";
 import {useEffect} from "react";
 
@@ -42,13 +42,23 @@ const meetings : Meeting[] = [
 
 export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));
 
-export default function Meetings () {
+export default function Meetings ({ showMeetingInfo } : { showMeetingInfo?: boolean }) {
     const [ nextMeeting, setNextMeeting ] = React.useState<Meeting | undefined>(undefined);
     useEffect(() => {
         setNextMeeting(getNextMeeting());
     }, []);
         // @ts-ignore
     return <div className="flex flex-col gap-8">
+
+        {showMeetingInfo && <div className="mt-4">
+                <p>Meetings are held weekly every Monday.</p>
+                {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!</strong></p>}
+                {nextMeeting && !isToday(nextMeeting.date) && <p>
+                    Our next meeting will be on <strong>{format(nextMeeting.date, "MMMM d")}</strong>.
+                </p>}
+            </div>
+        }
+
         <ol className="flex flex-col gap-8 border-l-1 p-0 border-foreground-dimmed ml-2 list-none">
             {meetings.map((meeting: Meeting) => {
                 let titleClass: string;

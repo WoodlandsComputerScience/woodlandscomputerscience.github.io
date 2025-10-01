@@ -4,7 +4,7 @@ interface Props {
     description?: string;
 }
 import "../global.css";
-const {title, description } = Astro.props;
+const {title, description} = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
@@ -16,6 +16,8 @@ const {title, description } = Astro.props;
     <title>{title}</title>
 </head>
 <body class="bg-neutral-950 font-mono font-light">
-<slot />
+<div class="px-4 lg:py-4 flex h-full mx-auto justify-center items-start flex-col lg:flex-row lg:gap-8 h-auto">
+    <slot />
+</div>
 </body>
 </html>

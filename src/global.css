@@ -19,9 +19,6 @@
         text-decoration: underline;
         color: var(--color-foreground-dimmed);
     }
-    a:visited {
-        color: var(--color-purple-300);
-    }
     h1, h2 {
         color: var(--color-foreground-bright);
     }
@@ -80,8 +77,12 @@
     }
 
     .blog-post {
+        a:visited {
+            color: var(--color-purple-200);
+        }
         img {
-            @apply max-h-120 max-w-full;
+            @apply max-h-120 max-w-full my-12;
+            object-fit: contain;
         }
         pre {
             @apply ml-8 p-2;
