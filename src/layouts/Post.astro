@@ -33,12 +33,12 @@ function buildTOC(rawHeadings: RawHeading[]): Heading[] {
 
 const toc = buildTOC(headings);
 ---
-<InterceptExternalLinks client:load />
 <Base title={frontmatter.title} description={frontmatter.description} >
+    <InterceptExternalLinks client:load />
     <Nav client:load active="/posts" />
     <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
         <div class={"max-w-full mx-auto flex flex-col gap-4 blog-post " + (frontmatter.slides ? "w-full" : "w-3xl")}>
-            <Pane overflowScroll={!frontmatter.slides} className="font-sans font-normal">
+            <Pane overflowScroll={!frontmatter.slides} >
                 <a href="/posts/" class="btn p-0 icon-text mb-4"><FaAngleLeft/> Back</a>
                 <article>
                     <h1>{frontmatter.title}</h1>
@@ -60,7 +60,9 @@ const toc = buildTOC(headings);
                             </ol>
                         </nav>
                     }
-                    <slot />
+                    <div class="contents">
+                        <slot />
+                    </div>
                 </article>
             </Pane>
             <Footer />

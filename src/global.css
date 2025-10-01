@@ -106,6 +106,14 @@
         p {
             @apply my-3;
         }
+
+        .contents {
+            p, li, td {
+                font-family: var(--font-sans);
+                font-weight: normal;
+            }
+        }
+
         .toc ol {
             list-style: disc;
         }

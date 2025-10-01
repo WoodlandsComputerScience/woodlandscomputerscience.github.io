@@ -14,7 +14,7 @@ const posts = (await getCollection('posts')).sort(
     <Nav client:load active="/posts" />
     <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
         <div class="max-w-3xl w-full mx-auto flex flex-col gap-4 blog-post">
-            <Pane className="font-sans font-normal" overflowScroll>
+            <Pane overflowScroll>
                 <h1>Meeting Notes</h1>
                 <p class="mb-8">Club updates, meeting notes, and resources will be posted here.</p>
                 <h2>Latest Posts</h2>
@@ -25,7 +25,7 @@ const posts = (await getCollection('posts')).sort(
                         <time datetime={formatISO(post.data.date)} class="text-foreground-dimmed">
                             {formatDate(post.data.date, "d MMMM yyyy")}
                         </time>
-                        <p>{post.data.description}</p>
+                        <p class="font-sans font-normal">{post.data.description}</p>
                     </li>)}
                 </ul>
             </Pane>
