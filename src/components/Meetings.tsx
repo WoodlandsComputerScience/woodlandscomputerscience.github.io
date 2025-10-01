@@ -69,7 +69,7 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                 let indicatorClass: string;
                 const next = nextMeeting;
                 const highlight = showNextMeeting && meeting == next;
-                if (highlight) {
+                if (!showNextMeeting || meeting == next) {
                     // current
                     indicatorClass = "bg-white";
                     dateClass = "text-sm text-foreground";
