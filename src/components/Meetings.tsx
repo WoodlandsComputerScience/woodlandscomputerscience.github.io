@@ -71,7 +71,7 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                 const highlight = showNextMeeting && meeting == next;
                 if (!showNextMeeting || meeting == next) {
                     // current
-                    indicatorClass = "bg-white";
+                    indicatorClass = showNextMeeting ? "bg-white" : "bg-foreground";
                     dateClass = "text-sm text-foreground";
                     titleClass = showNextMeeting ? "text-lg text-white" : "text-lg text-foreground";
                     textClass = showNextMeeting ? "text-white" : "";
