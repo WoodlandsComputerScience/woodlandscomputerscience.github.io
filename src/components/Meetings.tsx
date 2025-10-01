@@ -73,8 +73,8 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                     // current
                     indicatorClass = "bg-white";
                     dateClass = "text-sm text-foreground";
-                    titleClass = "text-lg text-white";
-                    textClass = "text-white";
+                    titleClass = showNextMeeting ? "text-lg text-white" : "text-foreground";
+                    textClass = showNextMeeting ? "text-white" : "";
                 } else if (isPast(nextMeeting?.date ?? 0)) {
                     // past
                     indicatorClass = "bg-foreground-dimmed";
