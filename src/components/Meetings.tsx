@@ -44,7 +44,7 @@ const meetings : Meeting[] = [
 
 export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));
 
-export default function Meetings ({ showMeetingInfo } : { showMeetingInfo?: boolean }) {
+export default function Meetings ({ showNextMeeting } : { showNextMeeting?: boolean }) {
     const [ nextMeeting, setNextMeeting ] = React.useState<Meeting | undefined>(undefined);
     useEffect(() => {
         setNextMeeting(getNextMeeting());
@@ -52,7 +52,7 @@ export default function Meetings ({ showMeetingInfo } : { showMeetingInfo?: bool
         // @ts-ignore
     return <div className="flex flex-col gap-8">
 
-        {showMeetingInfo && <div className="mt-4">
+        {showNextMeeting && <div className="mt-4">
                 <p>Meetings are held weekly every Monday.</p>
                 {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!</strong></p>}
                 {nextMeeting && !isToday(nextMeeting.date) && <p>
@@ -68,7 +68,7 @@ export default function Meetings ({ showMeetingInfo } : { showMeetingInfo?: bool
                 let textClass: string;
                 let indicatorClass: string;
                 const next = nextMeeting;
-                if (meeting == next) {
+                if (showNextMeeting && meeting == next) {
                     // current
                     indicatorClass = "bg-white";
                     dateClass = "text-sm text-foreground";
