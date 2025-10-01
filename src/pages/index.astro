@@ -9,8 +9,13 @@ import Footer from "../components/Footer";
 
 import hackPeelImage from '../assets/HackPeelLogo.png';
 import gameJamImage from '../assets/GameJam.png';
+
+const desc = `
+Welcome to the Woodlands School computer science community!
+Join us weekly for lessons, workshops, and contests.
+`
 ---
-<Base title="Woodlands Computer Science" description="Welcome to the Woodlands CS community! Meetings weekly on Mondays.">
+<Base title="Woodlands Computer Science" description={desc}>
     <HomeNav client:load />
     <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
         <Pane>

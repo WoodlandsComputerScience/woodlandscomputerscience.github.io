@@ -15,13 +15,15 @@ export function meetingTime(date: string) : Date {
 const meetings : Meeting[] = [
     {
         date: meetingTime("2025-09-15"),
-        title: "Game Jam Begins",
-        details: <>This meeting will be an intro to game development.</>,
+        title: "Intro to Game Development",
+        details: <>We're now kicking off our game development series for 2025!
+            This meeting is an intro into the principles of game development.</>,
     },
     {
         date: meetingTime("2025-09-22"),
-        title: "Exploring Game Engines",
-        details: <>We'll be teaching <strong>Godot</strong> this year, but feel free to use any engine you wish!</>,
+        title: "Game Jam Begins!",
+        details: <>The theme has been revealed: <strong>Comes in Pairs</strong><br /><br />
+            This meeting will be focused on exploring the Godot game engine.</>,
     },
     {
         date: meetingTime("2025-09-29"),
