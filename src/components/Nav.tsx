@@ -72,7 +72,7 @@ export default function Nav({active} : NavProps) {
             + (animate ? "duration-200 " : "duration-0 ")
         }>
             <div className="min-h-0 font-light">
-                <ul className="flex flex-col -ml-3 sm:flex-row lg:flex-col lg:ml-14 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
+                <ul className="flex flex-col -ml-2 sm:flex-row lg:flex-col lg:ml-14 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
                     { links.map((link) => <li key={link.href} >
                         <a href={link.href} className={link.href === active ? "nav-link active" : link.className}
                            onClick={linkCallback}>
