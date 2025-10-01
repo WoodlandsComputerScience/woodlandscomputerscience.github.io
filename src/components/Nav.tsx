@@ -54,12 +54,6 @@ export default function Nav({active} : NavProps) {
         }
         document.addEventListener("click", handler);
 
-        document.querySelectorAll("a").forEach(a => {
-            if (a.href.includes("http") && !a.href.includes("://" + location.hostname)) {
-                a.target = "_blank";
-            }
-        });
-
         return () => {
             document.removeEventListener("click", handler);
         }

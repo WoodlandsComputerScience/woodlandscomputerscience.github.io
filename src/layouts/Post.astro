@@ -6,6 +6,7 @@ import {formatDate, isValid} from "date-fns";
 import TableOfContents, { type Heading } from "../components/TableOfContents";
 import {FaAngleLeft} from "react-icons/fa6";
 import Nav from "../components/Nav";
+import InterceptExternalLinks from "../components/InterceptExternalLinks";
 const { frontmatter, headings } = Astro.props;
 const date = new Date(frontmatter.date);
 
@@ -32,6 +33,7 @@ function buildTOC(rawHeadings: RawHeading[]): Heading[] {
 
 const toc = buildTOC(headings);
 ---
+<InterceptExternalLinks client:load />
 <Base title={frontmatter.title} description={frontmatter.description} >
     <Nav client:load active="/posts" />
     <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
