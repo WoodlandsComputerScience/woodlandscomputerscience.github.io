@@ -21,6 +21,9 @@
         text-decoration: underline;
         color: var(--color-foreground-dimmed);
     }
+    code {
+        font-variant-ligatures: none;
+    }
     h1, h2 {
         color: var(--color-foreground-bright);
     }
@@ -58,7 +61,7 @@
     }
 
     :not(pre) > code {
-        @apply p-1 bg-neutral-900 rounded-sm;
+        @apply py-[0.5] px-1 bg-neutral-900 rounded-sm;
     }
 
     td, th {
