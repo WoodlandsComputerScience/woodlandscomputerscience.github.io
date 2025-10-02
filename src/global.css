@@ -215,16 +215,12 @@
             @apply pl-4;
             outline: none;
         }
-        &:hover {
+        &:hover, &:focus-within {
             @apply bg-neutral-950;
         }
 
         &:not(:last-child) {
             @apply border-b-2 border-neutral-700;
-        }
-        &:focus-within {
-            @apply border-transparent outline-2 outline-foreground-dimmed;
-            z-index: 1;
         }
         &:first-child {
             @apply rounded-t-2xl;
