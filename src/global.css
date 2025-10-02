@@ -201,7 +201,7 @@
         width: 100%;
     }
     .accordion-header {
-        font-weight: 4  00;
+        font-weight: 400;
         color: var(--color-foreground-bright);
         display: flex;
         width: 100%;
@@ -209,7 +209,11 @@
     .accordion-item {
         overflow: clip;
         position: relative;
+        * {
+            text-align: start;
+        }
         button {
+            @apply pl-4;
             outline: none;
         }
         &:hover {
