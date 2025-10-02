@@ -206,8 +206,10 @@
         width: 100%;
     }
     .accordion-item {
-        overflow: clip;
         position: relative;
+        &:hover {
+            @apply bg-neutral-950;
+        }
         * {
             text-align: start;
         }
@@ -215,25 +217,28 @@
             @apply pl-4;
             outline: none;
         }
-        &:hover, &:focus-within {
-            @apply bg-neutral-950;
-        }
-
         &:not(:last-child) {
             @apply border-b-2 border-neutral-700;
         }
-        &:first-child {
+        &:first-child, &:first-child button {
             @apply rounded-t-2xl;
         }
-        &:last-child {
+        &:last-child, &:last-child button {
             @apply rounded-b-2xl;
         }
+        button:focus-visible {
+            @apply outline-2 outline-neutral-400;
+        }
     }
-    .accordion-content[data-state="open"] {
-        animation: accordionSlideDown 200ms ease-in;
-    }
-    .accordion-content > :first-child {
-        @apply p-4 pt-0;
+    .accordion-content {
+        overflow: clip;
+
+        &[data-state="open"] {
+            animation: accordionSlideDown 200ms ease-in;
+        }
+        & > :first-child {
+            @apply p-4 pt-0;
+        }
     }
     .accordion-content[data-state="closed"] {
         animation: accordionSlideUp 200ms ease-in;
