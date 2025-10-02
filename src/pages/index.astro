@@ -6,9 +6,15 @@ import Pane from "../components/Pane";
 import {FaAngleRight} from "react-icons/fa6";
 import Meetings from "../components/Meetings";
 import Footer from "../components/Footer";
-
+import { getCollection } from 'astro:content';
 import hackPeelImage from '../assets/HackPeelLogo.png';
 import gameJamImage from '../assets/GameJam.png';
+import { NewsBar, NewsItem } from '../components/NewsBar';
+import Time from '../components/Time';
+
+const posts = (await getCollection('posts')).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+).slice(0, 5);
 
 const desc = `
 Welcome to the Woodlands School computer science community!
@@ -17,7 +23,7 @@ Join us weekly for lessons, workshops, and contests.
 ---
 <Base title="Woodlands Computer Science" description={desc}>
     <HomeNav client:load />
-    <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
+    <main class=`h-full min-w-0 max-w-full w-7xl flex flex-col lg:mr-4 gap-4` >
         <Pane>
             <h1 class="text-4xl font-bold mb-4" id="home">Woodlands CS is back for 2025</h1>
             <div class="flex flex-col gap-4 items-start max-w-3xl">
@@ -42,6 +48,18 @@ Join us weekly for lessons, workshops, and contests.
                 </div>
             </div>
             <hr class="my-8"/>
+            <h2 class="text-3xl font-bold mb-4">Latest Updates</h2>
+            <div class="flex flex-col gap-4 items-start">
+                <NewsBar client:load className="my-4">
+                    {posts.map(p => <NewsItem href={"/posts/" + p.id}>
+                        <h2 class="text-lg font-bold">{p.data.title}</h2>
+                        <Time dateTime={p.data.date} format='dd MMMM yyyy'/>
+                        <p class="mt-4 text-pretty overflow-ellipsis max-h-full line-clamp-5">{p.data.description}</p>
+                    </NewsItem>)}
+                </NewsBar>
+                <a href="/posts" class="text-center mx-auto icon-text">View all <FaAngleRight /></a>
+            </div>
+            <hr class="my-8"/>
             <div class="flex flex-col-reverse xl:flex-row items-start">
                 <div>
                     <div class="flex flex-col gap-4 max-w-3xl items-start">
@@ -60,12 +78,6 @@ Join us weekly for lessons, workshops, and contests.
                     </div>
                 </div>
                 <Image priority alt="Game jam poster" src={gameJamImage} class="xl:sticky xl:top-8 w-2xl md:max-w-3/7 mb-8 xl:my-0 xl:mx-8" />
-            </div>
-            <hr class="my-8"/>
-            <h2 class="text-3xl font-bold mb-4">Meeting Notes</h2>
-            <div class="flex flex-col gap-4 items-start">
-                <p>Past meeting notes and lesson material can be found on our website.</p>
-                <a href="/posts" class="btn border-2">Meeting Notes <FaAngleRight /></a>
             </div>
             <hr class="my-8"/>
             <h2 class="text-3xl font-bold mb-4">hack::peel</h2>

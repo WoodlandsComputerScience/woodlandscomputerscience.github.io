@@ -9,9 +9,9 @@ export interface PaneProps {
 
 export default function Pane({children, trafficLight, overflowScroll, className} : PaneProps) {
     trafficLight = trafficLight ?? true;
-    return <div className={"p-4 shadow-lg bg-neutral-800 rounded-3xl " + className}>
+    return <div className={"p-4 shadow-lg bg-neutral-800 rounded-3xl max-w-full " + className}>
         {trafficLight && <TrafficLight />}
-        <div className={"h-full w-full " + (overflowScroll ? "overflow-x-auto"  : "")}>
+        <div className={"h-full w-full max-w-full " + (overflowScroll ? "overflow-x-auto"  : "")}>
             { children }
         </div>
     </div>

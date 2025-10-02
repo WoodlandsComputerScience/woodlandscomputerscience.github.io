@@ -21,6 +21,9 @@
         text-decoration: underline;
         color: var(--color-foreground-dimmed);
     }
+    button {
+        cursor: pointer;
+    }
     code {
         font-variant-ligatures: none;
     }
@@ -164,6 +167,14 @@
         @apply min-h-4;
         @apply min-w-4;
     }
+}
+
+@utility hide-scrollbar {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 @layer components {

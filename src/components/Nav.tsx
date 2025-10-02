@@ -59,7 +59,7 @@ export default function Nav({active} : NavProps) {
         }
     }, [])
 
-    return <nav className="z-50 p-4 shadow-2xl bg-neutral-950/90 text-left sticky top-0 lg:top-4 w-full lg:w-auto shrink-0"
+    return <nav className="z-50 p-4 shadow-2xl bg-neutral-950/90 text-left sticky top-0 lg:top-4 w-full lg:w-auto shrink-0 grow-0"
         ref={domNode}>
         <div className="flex justify-between -ml-3">
             <Logo />
