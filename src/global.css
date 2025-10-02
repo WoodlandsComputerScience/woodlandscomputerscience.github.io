@@ -270,12 +270,10 @@
     }
 
     .btn {
-        @apply icon-text;
+        @apply icon-text rounded-full py-3 sm:py-2 px-4;
         border-color: var(--color-foreground);
         color: var(--color-foreground);
         text-decoration: none;
-        @apply rounded-full;
-        padding: calc(2*var(--spacing)) calc(4*var(--spacing));
     }
 
     .gradient-text {
