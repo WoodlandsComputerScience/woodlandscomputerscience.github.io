@@ -164,8 +164,7 @@
     box-sizing: border-box;
     align-items: center;
     svg {
-        @apply min-h-4;
-        @apply min-w-4;
+        @apply min-h-4 min-w-4;
     }
 }
 
@@ -244,8 +243,9 @@
         animation: accordionSlideUp 200ms ease-in;
     }
     .accordion-trigger {
-        @apply p-4;
+        @apply p-4 icon-text;
         display: flex;
+        align-items: start;
         cursor:auto;
         flex-direction: row;
         width: 100%;
