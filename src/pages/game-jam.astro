@@ -10,6 +10,8 @@ import {GameJamActions, GameJamCountdown} from "../components/GameJam";
 import gameJamPoster from "../assets/GameJam.png";
 import {Image} from "astro:assets";
 import Footer from "../components/Footer";
+import * as Accordion from "@radix-ui/react-accordion"
+import GameJamFaq from "../components/GameJamFaq";
 ---
 
 <Base title="Game Jam 2025 | Woodlands Computer Science" description="Woodlands CS 2025 game jam, from September 16 to October 13.">
@@ -48,20 +50,7 @@ import Footer from "../components/Footer";
                     <Meetings client:load />
                     <hr class="my-8" />
                     <h2 class="text-3xl font-bold mb-4">FAQ</h2>
-                    <details name="faq">
-                        <summary>Do I have to use the Godot engine?</summary>
-                        Nope! You are free to use any engine you wish. However, club lessons will be focused on Godot
-                        this year.
-                    </details>
-                    <details name="faq">
-                        <summary>How large can my team be?</summary>
-                        Traditionally, teams have been 4 people, but that is not a hard limit.
-                    </details>
-                    <details name="faq">
-                        <summary>Do I have to follow the theme?</summary>
-                        The theme is meant to inspire rather than constrain. Use it as a starting point when brainstorming
-                        your game's premise.
-                    </details>
+                    <GameJamFaq client:load />
                 </div>
                 <div class="w-auto flex flex-col sm:w-xl lg:w-auto sm:flex-row xl:flex-col gap-8 xl:sticky xl:top-8 xl:max-w-3/7 mb-8 xl:my-0 xl:mx-8">
                     <Image alt="Game jam poster" src={gameJamPoster} class="max-w-full sm:max-w-1/2 xl:max-w-full" />
