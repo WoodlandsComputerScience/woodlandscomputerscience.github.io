@@ -14,7 +14,7 @@ export interface NewsBarProps {
 }
 
 export function NewsItem(props: NewsItemProps) {
-    return <li className="block border-2 border-foreground rounded-2xl w-sm min-w-64 max-w-64 sm:min-w-85 sm:max-w-85 h-70">
+    return <li className="block border-2 border-foreground rounded-2xl w-sm min-w-66 max-w-66 sm:min-w-85 sm:max-w-85 h-70">
         <a href={props.href} className="flex flex-col max-h-full w-full no-underline p-4 h-full">
             {props.children}
         </a>
@@ -37,7 +37,8 @@ export function NewsBar(props: NewsBarProps) {
 
     const scroll = (multiplier: number) => {
         if (content.current) {
-            content.current.scrollBy({ left: multiplier * Math.max(content.current.clientWidth, 815), behavior: "smooth" });
+            // 559 obtained through trial and error :'(
+            content.current.scrollBy({ left: multiplier * Math.max(content.current.clientWidth, 559), behavior: "smooth" });
         }
     }
 
@@ -54,7 +55,7 @@ export function NewsBar(props: NewsBarProps) {
         {
             scrollable && <button className={"py-4 sm:px-4 -ml-4 " + (left ? "text-foreground-dimmed" : "text-neutral-700")} 
             disabled={!left}
-            onClick={() => scroll(-2/3)}
+            onClick={() => scroll(-1/2)}
             >
                 <FaAngleLeft size={24} />
             </button>
@@ -66,7 +67,7 @@ export function NewsBar(props: NewsBarProps) {
         {
             scrollable && <button className={"py-4 sm:px-4 -mr-4 " + (right ? "text-foreground-dimmed" : "text-neutral-700")}
             disabled={!right}
-            onClick={() => scroll(2/3)}
+            onClick={() => scroll(1/2)}
             >
                 <FaAngleRight size={24}/>
             </button>
