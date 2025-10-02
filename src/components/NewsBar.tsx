@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { FaAngleLeft, FaAngleRight, FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 
@@ -41,6 +41,13 @@ export function NewsBar(props: NewsBarProps) {
         }
     }
 
+    let shadow = [];
+    if (right) shadow.push("inset -15px 0 10px -7px rgba(0,0,0,0.5)");
+    if (left) shadow.push("inset 15px 0 10px -7px rgba(0,0,0,0.5)");
+    const css: CSSProperties = {
+        boxShadow: shadow.join(","),
+    };
+
     useEffect(updateButtons, []);
 
     return <div className={"flex flex-row items-center min-w-0 max-w-full " + props.className}>
@@ -53,7 +60,7 @@ export function NewsBar(props: NewsBarProps) {
             </button>
         }
 
-        <ol className="ps-0 list-none flex flex-row overflow-x-auto max-w-full gap-4 hide-scrollbar" ref={content} onScroll={updateButtons}>
+        <ol className="ps-0 list-none flex flex-row overflow-x-auto max-w-full gap-4 hide-scrollbar" style={css} ref={content} onScroll={updateButtons}>
             {props.children}
         </ol>
         {
