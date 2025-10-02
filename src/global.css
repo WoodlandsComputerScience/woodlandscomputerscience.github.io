@@ -196,7 +196,7 @@
 
 @layer components {
     .accordion {
-        @apply rounded-xl border-foreground-dimmed bg-neutral-900;
+        @apply rounded-2xl border-foreground-dimmed bg-neutral-900;
         width: 100%;
     }
     .accordion-header {
@@ -227,10 +227,10 @@
             z-index: 1;
         }
         &:first-child {
-            @apply rounded-t-xl;
+            @apply rounded-t-2xl;
         }
         &:last-child {
-            @apply rounded-b-xl;
+            @apply rounded-b-2xl;
         }
     }
     .accordion-content[data-state="open"] {
