@@ -36,11 +36,11 @@ const toc = buildTOC(headings);
 <Base title={frontmatter.title} description={frontmatter.description} >
     <InterceptExternalLinks client:load />
     <Nav client:load active="/posts" />
-    <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
+    <main class="h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4 min-w-0 overflow-x-auto" >
         <div class={"mx-auto flex flex-col gap-4 blog-post max-w-full " + (frontmatter.slides ? "w-full" : "w-3xl")}>
-            <Pane overflowScroll={!frontmatter.slides} >
+            <Pane>
                 <a href="/posts/" class="btn p-0 icon-text mb-4"><FaAngleLeft/> Back</a>
-                <article>
+                <article class="overflow-x-auto">
                     <h1>{frontmatter.title}</h1>
                     <p>
                         {isValid(date) && <time datetime={frontmatter.date}>
@@ -48,7 +48,6 @@ const toc = buildTOC(headings);
                         </time>}
                     </p>
                     <hr />
-
                     {frontmatter.slides &&
                             <span class="text-yellow-300 my-8 italic">This content may require a PDSB account.</span>
                     }

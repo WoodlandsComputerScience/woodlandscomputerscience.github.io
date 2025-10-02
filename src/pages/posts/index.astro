@@ -14,13 +14,13 @@ const posts = (await getCollection('posts')).sort(
     <Nav client:load active="/posts" />
     <main class=`h-full flex flex-col w-7xl max-w-full lg:mr-4 gap-4` >
         <div class="max-w-3xl w-full mx-auto flex flex-col gap-4 blog-post">
-            <Pane overflowScroll>
+            <Pane>
                 <h1 class="text-4xl">Meeting Notes</h1>
                 <p class="mb-8">Club updates, meeting notes, and resources will be posted here.</p>
                 <hr class="my-8" />
                 <h2>Latest Posts</h2>
                 <ul class="list-none p-0 m-0">
-                    {posts.map((post, index) => <li class="ps-0 mb-16">
+                    {posts.map((post) => <li class="ps-0 mb-16">
                         <h3><a href={"/posts/" + post.id}>{post.data.title}</a></h3>
                         <time datetime={formatISO(post.data.date)} class="text-foreground-dimmed">
                             {formatDate(post.data.date, "d MMMM yyyy")}
