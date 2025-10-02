@@ -14,18 +14,18 @@ export interface NewsBarProps {
 }
 
 export function NewsItem(props: NewsItemProps) {
-    return <div className="border-2 border-foreground rounded-2xl w-sm min-w-sm max-w-sm h-65">
+    return <li className="block border-2 border-foreground rounded-2xl w-sm min-w-sm max-w-sm h-65">
         <a href={props.href} className="flex flex-col max-h-full w-full no-underline p-4 h-full">
             {props.children}
         </a>
-    </div>
+    </li>
 }
 
 export function NewsBar(props: NewsBarProps) {
     const [left, setLeft] = useState(false);
     const [right, setRight] = useState(false);
     const [scrollable, setScrollable] = useState(false);
-    const content = useRef<HTMLDivElement>(null);
+    const content = useRef<HTMLOListElement>(null);
     
     const updateButtons = () => {
         if (content.current) {
@@ -53,9 +53,9 @@ export function NewsBar(props: NewsBarProps) {
             </button>
         }
 
-        <div className="flex flex-row overflow-x-auto max-w-full gap-4 hide-scrollbar" ref={content} onScroll={updateButtons}>
+        <ol className="ps-0 list-none flex flex-row overflow-x-auto max-w-full gap-4 hide-scrollbar" ref={content} onScroll={updateButtons}>
             {props.children}
-        </div>
+        </ol>
         {
             scrollable && <button className={"p-4 shadow " + (right ? "text-foreground-dimmed" : "text-neutral-700")}
             disabled={!right}
