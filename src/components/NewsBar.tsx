@@ -15,7 +15,7 @@ export interface NewsBarProps {
 
 export function NewsItem(props: NewsItemProps) {
     return <div className="border-2 border-foreground rounded-2xl w-sm min-w-sm max-w-sm h-65">
-        <a href={props.href} className="flex flex-col max-h-full w-full no-underline p-4">
+        <a href={props.href} className="flex flex-col max-h-full w-full no-underline p-4 h-full">
             {props.children}
         </a>
     </div>
