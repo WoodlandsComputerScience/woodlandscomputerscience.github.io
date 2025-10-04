@@ -3,5 +3,5 @@ import Post from "./Post.astro";
 const url: string = Astro.props.frontmatter.slides;
 ---
 <Post {...Astro.props}>
-    <iframe class="rounded-2xl mt-4 w-full aspect-[1.55]" src={url} allowfullscreen="true" />
+    <iframe class="rounded-2xl mt-4 w-full aspect-[1.55] bg-white" src={url} allowfullscreen="true" />
 </Post>
