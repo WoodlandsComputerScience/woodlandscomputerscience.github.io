@@ -37,37 +37,30 @@ export function NewsBar(props: NewsBarProps) {
 
     const scroll = (multiplier: number) => {
         if (content.current) {
-            // 559 obtained through trial and error :'(
-            content.current.scrollBy({ left: multiplier * Math.max(content.current.clientWidth, 559), behavior: "smooth" });
+            // 280 obtained through trial and error :'(
+            content.current.scrollBy({ left: Math.sign(multiplier) * Math.max(280, Math.abs(multiplier) * content.current.clientWidth), behavior: "smooth" });
         }
     }
-
-    let shadow = [];
-    if (right) shadow.push("inset -15px 0 10px -7px rgba(0,0,0,0.5)");
-    if (left) shadow.push("inset 15px 0 10px -7px rgba(0,0,0,0.5)");
-    const css: CSSProperties = {
-        boxShadow: shadow.join(","),
-    };
-
+    
     useEffect(updateButtons, []);
 
     return <div className={"flex flex-row items-center min-w-0 max-w-full " + props.className}>
         {
             scrollable && <button className={"py-4 sm:px-4 -ml-4 " + (left ? "text-foreground-dimmed" : "text-neutral-700")} 
             disabled={!left}
-            onClick={() => scroll(-1/2)}
+            onClick={() => scroll(-3/5)}
             >
                 <FaAngleLeft size={24} />
             </button>
         }
 
-        <ol className="ps-0 list-none flex flex-row overflow-x-auto max-w-full gap-4 hide-scrollbar" style={css} ref={content} onScroll={updateButtons}>
+        <ol className="ps-0 list-none flex flex-row overflow-x-auto max-w-full gap-4 hide-scrollbar" ref={content} onScroll={updateButtons}>
             {props.children}
         </ol>
         {
             scrollable && <button className={"py-4 sm:px-4 -mr-4 " + (right ? "text-foreground-dimmed" : "text-neutral-700")}
             disabled={!right}
-            onClick={() => scroll(1/2)}
+            onClick={() => scroll(3/5)}
             >
                 <FaAngleRight size={24}/>
             </button>
