@@ -20,6 +20,9 @@
         font-family: var(--font-mono);
         font-weight: var(--font-weight-light);
     }
+    hr {
+        color: var(--color-neutral-500);
+    }
     a {
         text-decoration: underline;
         color: var(--color-foreground-dimmed);
