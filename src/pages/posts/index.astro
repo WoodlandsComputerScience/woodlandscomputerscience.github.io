@@ -19,13 +19,13 @@ const posts = (await getCollection('posts')).sort(
                 <p class="mb-8">Club updates, meeting notes, and resources will be posted here.</p>
                 <hr class="my-8" />
                 <h2>Latest Posts</h2>
-                <ul class="list-none p-0 m-0">
+                <ul class="list-none p-0 m-0 max-w-xl">
                     {posts.map((post) => <li class="ps-0 mb-16">
                         <h3><a href={"/posts/" + post.id}>{post.data.title}</a></h3>
                         <time datetime={formatISO(post.data.date)} class="text-foreground-dimmed">
                             {formatDate(post.data.date, "d MMMM yyyy")}
                         </time>
-                        <p class="font-sans font-normal">{post.data.description}</p>
+                        <p class="text-pretty">{post.data.description}</p>
                     </li>)}
                 </ul>
             </Pane>
