@@ -59,11 +59,11 @@ export default function Nav({active} : NavProps) {
         }
     }, [])
 
-    return <nav className="z-50 p-4 shadow-2xl bg-neutral-950/90 text-left sticky top-0 lg:top-4 w-full lg:w-auto shrink-0 grow-0"
+    return <nav className="z-50 px-4 pt-5 pb-2 shadow-2xl bg-neutral-950/80 text-left sticky top-0 lg:top-4 w-full left-0 lg:w-auto shrink-0 grow-0 backdrop-blur-md"
         ref={domNode}>
-        <div className="flex justify-between -ml-3">
+        <div className="flex justify-between">
             <Logo />
-            <button className="sm:hidden hover:cursor-pointer p-3 -mr-6" onClick={drawerToggleCallback}>
+            <button className="sm:hidden hover:cursor-pointer p-3" onClick={drawerToggleCallback}>
                 <FaAngleDown className={"transition duration-200 " + (navOpen ? "-rotate-180" : "")} />
             </button>
         </div>
@@ -72,7 +72,7 @@ export default function Nav({active} : NavProps) {
             + (animate ? "duration-200 " : "duration-0 ")
         }>
             <div className="min-h-0 font-light">
-                <ul className="flex flex-col -ml-2 sm:flex-row lg:flex-col lg:ml-14 gap-3 text-nowrap flex-wrap mt-4 list-none p-0">
+                <ul className="flex flex-col -ml-1 sm:flex-row lg:flex-col lg:ml-18 gap-3 text-nowrap flex-wrap mt-2 mb-2 list-none p-0">
                     { links.map((link) => <li key={link.href} >
                         <a href={link.href} className={link.href === active ? "nav-link active" : link.className}
                            onClick={linkCallback}>

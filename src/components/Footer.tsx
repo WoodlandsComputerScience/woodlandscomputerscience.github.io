@@ -1,4 +1,4 @@
-import {GITHUB_URL, INSTAGRAM_URL} from "../Config.ts";
+import {GITHUB_URL, INSTAGRAM_URL} from "../Config";
 import {FaGithub, FaInstagram} from "react-icons/fa6";
 
 export default function Footer() {

@@ -14,8 +14,8 @@ export interface NewsBarProps {
 }
 
 export function NewsItem(props: NewsItemProps) {
-    return <li className="block border-2 border-foreground rounded-2xl w-sm min-w-66 max-w-66 sm:min-w-85 sm:max-w-85 h-70">
-        <a href={props.href} className="flex flex-col max-h-full w-full no-underline p-4 h-full">
+    return <li className="block ps-0 bg-neutral-950/40 border-2 border-neutral-700 rounded-2xl w-sm min-w-66 max-w-66 sm:min-w-85 sm:max-w-85 h-93 overflow-clip">
+        <a href={props.href} className="flex flex-col max-h-full w-full no-underline h-full">
             {props.children}
         </a>
     </li>

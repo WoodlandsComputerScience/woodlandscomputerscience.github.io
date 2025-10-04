@@ -1,9 +1,7 @@
 import {useEffect, useState} from "react";
-import {meetingTime} from "./Meetings.tsx";
 import {differenceInCalendarDays, differenceInHours, intervalToDuration, isPast} from "date-fns";
 import {FaAngleRight} from "react-icons/fa6";
-
-export const gameJamEndDate = meetingTime("2025-10-13");
+import { gameJamEndDate } from "../Config.tsx";
 
 export function GameJamCountdown() {
     const [ countdown, setCountdown ] = useState("...");
@@ -26,7 +24,7 @@ export function GameJamCountdown() {
     }, [])
 
 
-    return <div className="@container w-full border-2 border-foreground-dimmed rounded-4xl p-8 flex flex-col select-none bg-neutral-900 justify-between">
+    return <div className="@container w-full border-2 border-foreground-dimmed rounded-2xl p-8 flex flex-col select-none bg-neutral-950 justify-between">
         <span className="text-xl text-foreground-dimmed text-center">
             {concluded ? "The game jam has concluded!" : "Submissions are due in"}
         </span>

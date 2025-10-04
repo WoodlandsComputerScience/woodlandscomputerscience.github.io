@@ -1,51 +1,11 @@
 import {format, isFuture, isPast, isToday} from "date-fns";
-import * as React from "react";
-import {useEffect} from "react";
-
-export interface Meeting {
-    date: Date;
-    title: string;
-    details: React.ReactNode;
-}
-
-export function meetingTime(date: string) : Date {
-    return new Date(date + "T11:00:00");
-}
-
-const meetings : Meeting[] = [
-    {
-        date: meetingTime("2025-09-15"),
-        title: "Intro to Game Development",
-        details: <>We're now kicking off our game development series for 2025!
-            This meeting is an intro into the principles of game development.</>,
-    },
-    {
-        date: meetingTime("2025-09-22"),
-        title: "Game Jam Begins!",
-        details: <>The theme has been revealed: <strong>Comes in Pairs</strong><br /><br />
-            This meeting will be focused on exploring the Godot game engine.</>,
-    },
-    {
-        date: meetingTime("2025-09-29"),
-        title: "Prototyping Your Game",
-        details: <>Start prototyping your idea first to make sure it's viable and fun.</>,
-    },
-    {
-        date: meetingTime("2025-10-06"),
-        title: "Reiterating and Polishing",
-        details: <>Begin finalizing your game and adding the finishing touches.</>,
-    },
-    {
-        date: meetingTime("2025-10-13"),
-        title: "Showcase",
-        details: <>Game jam submissions are due!</>,
-    },
-];
+import {useEffect, useState} from "react";
+import { meetings, type Meeting } from "../Config";
 
 export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));
 
 export default function Meetings ({ showNextMeeting } : { showNextMeeting?: boolean }) {
-    const [ nextMeeting, setNextMeeting ] = React.useState<Meeting | undefined>(undefined);
+    const [ nextMeeting, setNextMeeting ] = useState<Meeting | undefined>(undefined);
     useEffect(() => {
         setNextMeeting(getNextMeeting());
     }, []);

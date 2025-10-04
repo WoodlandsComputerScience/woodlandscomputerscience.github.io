@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "@fontsource/jetbrains-mono/latin.css";
 @import "@fontsource/jetbrains-mono/latin-italic.css";
+@import "@fontsource/inter/latin.css";
+@import "@fontsource/inter/latin-italic.css";
 
 @theme {
     --color-brand: #17a71b;
@@ -9,6 +11,7 @@
     --color-foreground-bright: var(--color-neutral-100);
     --color-social-discord: #5865F2;
     --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
 }
 @layer base {
     html {
@@ -81,7 +84,7 @@
         font-weight: 500;
     }
     blockquote {
-        @apply ml-8 ps-6 border-l-4 border-b-foreground-dimmed;
+        @apply ps-6 border-l-4 border-l-foreground-dimmed;
     }
 
     .blog-post {
@@ -93,7 +96,7 @@
             object-fit: contain;
         }
         pre {
-            @apply ml-8 p-2;
+            @apply p-2 ps-6;
         }
         h1 {
             @apply text-3xl mb-4;
@@ -115,7 +118,7 @@
             @apply my-3;
         }
 
-        .blog-body {
+        .contents {
             p, li, td {
                 font-family: var(--font-sans);
                 font-weight: normal;
@@ -131,6 +134,10 @@
         .toc a {
             color: var(--color-foreground-dimmed);
         }
+    }
+    * {
+
+        font-feature-settings: "cv11";
     }
 }
 
@@ -200,16 +207,13 @@
         width: 100%;
     }
     .accordion-header {
-        font-weight: 400;
+        font-weight: 500;
         color: var(--color-foreground-bright);
         display: flex;
         width: 100%;
     }
     .accordion-item {
         position: relative;
-        &:hover {
-            @apply bg-neutral-950;
-        }
         * {
             text-align: start;
         }
@@ -218,7 +222,7 @@
             outline: none;
         }
         &:not(:last-child) {
-            @apply border-b-2 border-neutral-700;
+            @apply border-b-1 border-neutral-700;
         }
         &:first-child, &:first-child button {
             @apply rounded-t-2xl;
@@ -247,7 +251,6 @@
         @apply p-4 icon-text;
         display: flex;
         align-items: start;
-        cursor:auto;
         flex-direction: row;
         width: 100%;
         justify-content: space-between;
@@ -275,7 +278,7 @@
     }
 
     .btn {
-        @apply icon-text rounded-full py-3 sm:py-2 px-4;
+        @apply icon-text rounded-full py-3 px-4;
         border-color: var(--color-foreground);
         color: var(--color-foreground);
         text-decoration: none;
@@ -290,13 +293,13 @@
     }
 
     a.gradient-text:hover {
-        animation: gradient-link-hover 1s infinite linear;
+        animation: gradient-link-hover 1.5s infinite linear;
     }
     .gradient-text svg {
         color: var(--from-color);
     }
     a.gradient-text:hover svg {
-        animation: gradient-link-icon-hover 1s infinite linear;
+        animation: gradient-link-icon-hover 1.5s infinite linear;
     }
 
     details {
@@ -308,5 +311,19 @@
         font-weight: 400;
         color: var(--color-foreground);
         border-bottom: 2px solid var(--color-foreground);
+    }
+    .img-shadow-b {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            box-shadow: inset 0 -3.25rem 3.25rem rgba(0, 0, 0, 0.75);
+        }
     }
 }

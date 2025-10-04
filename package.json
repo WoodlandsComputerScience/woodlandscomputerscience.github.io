@@ -9,12 +9,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.4",
-    "@astrojs/react": "^4.4.0",
-    "@astrojs/sitemap": "^3.6.0",
+    "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.6",
     "@radix-ui/react-accordion": "^1.2.12",
-    "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.14.1",
     "date-fns": "^4.1.0",
     "react": "^19.1.1",
@@ -25,12 +22,13 @@
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/react": "^4.4.0",
+    "@astrojs/sitemap": "^3.6.0",
+    "@tailwindcss/vite": "^4.1.13",
     "@eslint/js": "^9.33.0",
-    "@tanstack/router-cli": "^1.132.17",
-    "@tanstack/router-plugin": "^1.132.17",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",

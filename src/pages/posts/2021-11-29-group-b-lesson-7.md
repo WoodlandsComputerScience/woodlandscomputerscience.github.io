@@ -6,6 +6,7 @@ categories: group-b
 current_page: lessons
 description: |
   Welcome to the fourth meeting of group B! In this meeting, we'll go through the core functionality of our code runner Discord bot.
+image: ../../thumbs/2021-11-29.png
 ---
 Welcome to the fourth meeting of group B! In this meeting, we'll go through the core functionality of our code runner Discord bot.
 

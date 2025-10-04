@@ -3,10 +3,11 @@ import { glob } from 'astro/loaders'; // Not available with legacy API
 
 const posts = defineCollection({
     loader: glob({ pattern: "**/*.md", base: "./src/pages/posts" }),
-    schema: z.object({
-        date: z.date(),
-        title: z.string(),
+    schema: ({image}) => z.object({
+    date: z.date(),
+    title: z.string(),
         description: z.string(),
+        image: image().optional(),
     }),
 });
 

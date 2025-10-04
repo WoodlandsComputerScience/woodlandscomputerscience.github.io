@@ -7,6 +7,7 @@ current_page: lessons
 code_editor: false
 description: |
   Welcome to the third meeting of group B! In this meeting, we'll be discussing the plan for the upcoming Discord bot series.
+image: ../../thumbs/2021-11-22.avif
 ---
 Welcome to the third meeting of group B! In this meeting, we'll be discussing the plan for the upcoming Discord bot series.
 
