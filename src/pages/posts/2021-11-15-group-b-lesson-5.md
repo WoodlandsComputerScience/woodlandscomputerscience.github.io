@@ -81,8 +81,8 @@ Instead of needing HTML files whose names correspond to the URL path, you can ge
 | Users can add their own data   | Slower than static websites (since HTML is generated on-the-fly)       |
 | Allows for advanced user interaction | |
 
-<br>
 Though pros and cons exist for both types of websites, static and dynamic websites are often used for different cases. The common principle is:
+
 > Where you can't use a static website, use a dynamic website. Otherwise, stick to a static website.
 
 ## Languages and Frameworks

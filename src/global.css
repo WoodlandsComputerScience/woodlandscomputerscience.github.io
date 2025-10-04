@@ -118,7 +118,7 @@
             @apply my-3;
         }
 
-        .contents {
+        .blog-contents {
             p, li, td {
                 font-family: var(--font-sans);
                 font-weight: normal;
@@ -133,6 +133,11 @@
         }
         .toc a {
             color: var(--color-foreground-dimmed);
+        }
+        table {
+            display: block;
+            max-width: 100%;
+            overflow-x: auto;
         }
     }
     * {
