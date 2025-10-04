@@ -64,7 +64,7 @@ export default function Nav({active} : NavProps) {
         <div className="flex justify-between">
             <Logo />
             <button className="sm:hidden hover:cursor-pointer p-3" onClick={drawerToggleCallback}>
-                <FaAngleDown className={"transition duration-200 " + (navOpen ? "-rotate-180" : "")} />
+                <FaAngleDown className={"transition duration-200 " + (navOpen ? "rotate-180" : "")} />
             </button>
         </div>
         <div className={"transition-[grid-template-rows] ease-in-out overflow-hidden grid sm:block "
