@@ -102,7 +102,6 @@ Presented below are some commonly-used languages and frameworks in web developme
 | Express | Node.js (JavaScript) | Make webpages dynamic, allow interactions with databases, allow logins, etc. | Backend |
 | MySQL | SQL | Allows data to be stored and relationships to be made | Database |
 
-<br>
 Note that you will encouter many more languages and frameworks, this is just intended as an introduction to many of the commonly-used ones.
 
 <img src="/assets/img/group-b/lesson-5/frameworks.png" alt="" class="post-img mt-3">
