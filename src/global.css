@@ -323,7 +323,7 @@
             height: 100%;
             left: 0;
             top: 0;
-            box-shadow: inset 0 -3.25rem 3.25rem rgba(0, 0, 0, 0.75);
+            box-shadow: inset 0 -3.25rem 3.25rem rgba(0, 0, 0, 0.9);
         }
     }
 }
