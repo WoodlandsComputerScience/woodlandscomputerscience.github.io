@@ -63,7 +63,7 @@ export default function Nav({active} : NavProps) {
         ref={domNode}>
         <div className="flex justify-between">
             <Logo />
-            <button className="sm:hidden hover:cursor-pointer p-3" onClick={drawerToggleCallback}>
+            <button className="sm:hidden hover:cursor-pointer p-3 mb-4" onClick={drawerToggleCallback}>
                 <FaAngleDown className={"transition duration-200 " + (navOpen ? "rotate-180" : "")} />
             </button>
         </div>
