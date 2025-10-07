@@ -11,6 +11,8 @@ import hackPeelImage from '../assets/HackPeelLogo.png';
 import gameJamImage from '../assets/GameJam.png';
 import { NewsBar, NewsItem } from '../components/NewsBar';
 import Time from '../components/Time';
+import HeroHeading from '../components/HeroHeading';
+import TrafficLight from '../components/TrafficLight';
 
 const posts = (await getCollection('posts')).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -24,32 +26,10 @@ Join us weekly for lessons, workshops, and contests.
 <Base title="Woodlands Computer Science" description={desc}>
     <HomeNav client:load />
     <main class="p-4 pt-0 lg:pt-4 h-full min-w-0 max-w-full w-7xl flex flex-col lg:mr-4 gap-4" >
-        <Pane>
-            <h1 class="text-4xl font-bold mb-4" id="home">Woodlands CS is back for 2025</h1>
-            <div class="flex flex-col gap-4 items-start max-w-3xl">
-                <p>
-                    Welcome to the Woodlands computer science community!
-                </p>
-                <p>
-                    Join us <strong class="text-neutral-200 underline"> Monday lunches in Room 100</strong> for:
-                </p>
-                <ul>
-                    <li>Lessons and workshops</li>
-                    <li>Contest programming (CCC)</li>
-                    <li>Game dev</li>
-                    <li>Cybersecurity</li>
-                    <li>ML/AI</li>
-                    <li>Web dev</li>
-                    <li>Open studio</li>
-                </ul>
-                <p>Beginning programmers or those interested in CS are encouraged to attend!</p>
-                <div class="flex gap-4 items-start mt-4 max-w-full flex-wrap">
-                    <a href="#calendar" class="btn bg-brand text-white font-semibold">See What's Happening <FaAngleRight /></a>
-                </div>
-            </div>
-            <hr class="my-8"/>
-            <h2 class="text-3xl font-bold mb-4">Latest Updates</h2>
-            <div class="flex flex-col gap-4 items-start">
+        <Pane trafficLight={false} className="overflow-clip">
+            <HeroHeading client:load />
+            <div class="p-5 flex flex-col gap-4 items-start">
+                <h2 class="text-3xl font-bold mb md:px-12">Latest Updates</h2>
                 <NewsBar client:load>
                     {posts.map((p, idx) => <NewsItem href={"/posts/" + p.id}>
                         {p.data.image ?
@@ -68,8 +48,8 @@ Join us weekly for lessons, workshops, and contests.
                 </NewsBar>
                 <a href="/posts" class="text-center mx-auto icon-text">View all <FaAngleRight /></a>
             </div>
-            <hr class="my-8"/>
-            <div class="flex flex-col-reverse xl:flex-row items-start">
+            <hr />
+            <div class="flex flex-col-reverse xl:flex-row items-start py-8 px-5 md:px-15 bg-zinc-900">
                 <div>
                     <div class="flex flex-col gap-4 max-w-3xl items-start">
                         <h2 class="text-3xl font-bold" id="game-jam">Game Jam 2025</h2>
@@ -79,19 +59,19 @@ Join us weekly for lessons, workshops, and contests.
                             technical or gamedev experience necessary.</p>
                         <p class="text-foreground-dimmed text-sm"><i>Submissions are due on October 13.</i></p>
                         <a href="/game-jam" class="btn border-2">Details <FaAngleRight /></a>
-                    </div>
-                    <hr  class="my-8"/>
+                    </div> 
+                    <hr class="my-8" />
                     <div class="flex flex-col gap-4 max-w-xl">
                         <h2 class="text-3xl font-bold" id="calendar">Calendar</h2>
                         <Meetings client:load showNextMeeting />
                     </div>
                 </div>
-                <Image priority alt="Game jam poster" src={gameJamImage} class="xl:sticky xl:top-8 w-2xl md:max-w-3/7 mb-8 xl:my-0 xl:mx-8" />
+                <Image priority alt="Game jam poster" src={gameJamImage} class="xl:sticky xl:top-8 w-full sm:max-w-5/7 mx-auto xl:max-w-3/7 mb-8 xl:my-0 xl:ml-12" />
             </div>
-            <hr class="my-8"/>
-            <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
-            <div class="flex flex-col-reverse xl:flex-row items-start justify-between">
+            <hr />
+            <div class="flex flex-col-reverse xl:flex-row items-start justify-between p-5 sm:px-15">
                 <article class="flex flex-col gap-4 items-start max-w-3xl">
+                    <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
                     <p>
                         hack::peel is the Woodlands' annual Peel-wide hackathon.
                         Join over 100 students from across the Peel region and turn a special idea into your very own hack!
@@ -101,7 +81,7 @@ Join us weekly for lessons, workshops, and contests.
                     </p>
                     <p class="text-foreground-dimmed text-sm"><i>More details coming soon, stay tuned!</i></p>
                 </article>
-                <Image alt="hack::peel logo" src={hackPeelImage} class="hidden lg:block w-lg md:max-w-3/4 my-8 xl:my-0 xl:mx-8" />
+                <Image alt="hack::peel logo" src={hackPeelImage} class="hidden lg:block w-lg md:max-w-3/4 my-8 xl:m-8" />
             </div>
         </Pane>
         <Footer />

@@ -172,6 +172,17 @@
     100% { color: var(--from-color); }
 }
 
+@keyframes blink {
+    0% { opacity: 100%; }
+    48% { opacity: 0% }
+    52% { opacity: 0% }
+    100% { opacity: 100% }
+}
+
+@utility caret {
+    animation: blink 700ms infinite;
+}
+
 @utility icon-text {
     display: inline-flex;
     flex-direction: row;
