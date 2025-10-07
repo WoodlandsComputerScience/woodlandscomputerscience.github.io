@@ -88,13 +88,13 @@ export default function HeroHeading() {
     return <div className={"border-1 border-b-0 border-gray-800 p-5 rounded-t-3xl flex flex-col items-start h-195 max-h-[82vh] transition-colors duration-2500 bg-linear-to-t sm:bg-linear-to-br from-slate-950 from-35% to-zinc-950 via-75% " + bgClassName}>
             <TrafficLight className="h-3.5" />
             <div className="my-auto w-full md:pl-12">
-                <h1 id="home" className="@container text-xl sm:text-4xl my-8 font-bold max-w-3xl"><em>Open doors</em> to
+                <h1 id="home" className="@container text-xl sm:text-4xl my-4 font-bold max-w-3xl"><em>Open doors</em> to
                     <strong className="mt-2 sm:mt-4 block text-3xl @md:text-5xl @lg:text-5xl @2xl:text-6xl @3xl:text-7xl font-extrabold h-[2lh]">
                         <span className={className}>{text}
                         <span className={"transition-opacity font-normal text-white " + (blink ? "caret" : "opacity-100")}>_</span></span><span className="invisible">{reserveString}</span>
                     </strong>
                 </h1>
-                <p className="leading-8 max-w-2xl text-pretty mb-8">
+                <p className="leading-8 max-w-2xl text-pretty mb-4 hidden sm:block">
                     Welcome to the Woodlands School's computer science club!
                 </p>
                 <p className="leading-8 max-w-2xl text-pretty">
