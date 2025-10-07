@@ -12,7 +12,6 @@ import gameJamImage from '../assets/GameJam.png';
 import { NewsBar, NewsItem } from '../components/NewsBar';
 import Time from '../components/Time';
 import HeroHeading from '../components/HeroHeading';
-import TrafficLight from '../components/TrafficLight';
 
 const posts = (await getCollection('posts')).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -46,7 +45,7 @@ Join us weekly for lessons, workshops, and contests.
                         </article>
                     </NewsItem>)}
                 </NewsBar>
-                <a href="/posts" class="text-center mx-auto icon-text">View all <FaAngleRight /></a>
+                <a href="/posts" class="text-center mx-auto icon-text mb-8">View all <FaAngleRight /></a>
             </div>
             <hr />
             <div class="flex flex-col-reverse xl:flex-row items-start py-8 px-5 md:px-15 bg-zinc-900">
