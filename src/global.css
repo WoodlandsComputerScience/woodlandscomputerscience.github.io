@@ -1,8 +1,6 @@
 @import "tailwindcss";
-@import "@fontsource/jetbrains-mono/latin.css";
-@import "@fontsource/jetbrains-mono/latin-italic.css";
-@import "@fontsource/inter/latin.css";
-@import "@fontsource/inter/latin-italic.css";
+@import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/inter";
 
 @theme {
     --color-brand: #17a71b;
@@ -10,8 +8,8 @@
     --color-foreground: var(--color-neutral-300);
     --color-foreground-bright: var(--color-neutral-100);
     --color-social-discord: #5865F2;
-    --font-mono: 'JetBrains Mono', monospace;
-    --font-sans: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono Variable', monospace;
+    --font-sans: 'Inter Variable', sans-serif;
 }
 @layer base {
     html {
