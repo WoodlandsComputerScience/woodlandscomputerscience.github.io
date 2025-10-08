@@ -44,7 +44,7 @@ const toc = buildTOC(headings);
                 <article class="max-w-full p-5">
                     <h1>{frontmatter.title}</h1>
                     <p>
-                        {isValid(date) && <Time dateTime={date} format="dd MMMM yyyy" />}
+                        {isValid(date) && <Time dateTime={date} format="d MMMM yyyy" />}
                     </p>
                     <hr />
                     {frontmatter.slides &&
