@@ -44,7 +44,7 @@ export function GameJamActions() {
         {!concluded &&
             <div className="flex flex-col gap-4 items-start mt-4 max-w-full flex-wrap">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLScMlYuaazZTfdOUaqZgT0fYL_2F8TTW5Ihji6-xBKGuSN2a_w/viewform"
-                   className="btn border-2">Submit a Game <FaAngleRight /></a>
+                   className="btn" role="button">Submit a Game <FaAngleRight /></a>
                 <span className="text-foreground-dimmed text-sm italic">
                     Make sure you are signed into your PDSB account
                 </span>

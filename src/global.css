@@ -333,9 +333,17 @@
 
     .btn {
         @apply icon-text rounded-full py-3 px-4;
+        border-width: 2px;
         border-color: var(--color-foreground);
         color: var(--color-foreground);
         text-decoration: none;
+        transition: 
+            font-weight 200ms,
+            box-shadow 200ms;
+        &:hover {
+            @apply shadow-md shadow-foreground-dimmed;
+            font-weight: 850;
+        }
     }
 
     .gradient-text {

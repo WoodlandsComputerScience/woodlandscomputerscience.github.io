@@ -101,7 +101,7 @@ export default function HeroHeading() {
                     Join us <span className="text-neutral-200 underline"> Monday lunches in Room 100</span> for lessons, workshops, and
                     contests. Beginning programmers or those interested in CS are encouraged to attend!
                 </p>
-                <a href="#calendar" className="mt-8 btn text-brand border-brand border-2 font-semibold">See What's Happening <FaAngleRight /></a>
+                <a href="#calendar" className="mt-8 btn text-brand border-brand shadow-brand" role="button">See What's Happening <FaAngleRight /></a>
             </div>
         </div>
             
