@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {differenceInCalendarDays, differenceInHours, intervalToDuration, isPast} from "date-fns";
 import {FaAngleRight} from "react-icons/fa6";
 import { gameJamEndDate } from "../Config.tsx";
+import Time from "./Time.tsx";
 
 export function GameJamCountdown() {
     const [ countdown, setCountdown ] = useState("...");
@@ -29,7 +30,7 @@ export function GameJamCountdown() {
             {concluded ? "The game jam has concluded!" : "Submissions are due in"}
         </span>
         <span className="text-4xl @xs:text-7xl font-black text-white text-center my-8">{countdown}</span>
-        <span className="text-lg text-foreground-dimmed text-center">{!concluded && "(Monday, October 13)"}</span>
+        <span className="text-lg text-foreground-dimmed text-center">{!concluded && <Time format="(EEEE, MMMM dd)" dateTime={gameJamEndDate} />}</span>
     </div>
 }
 

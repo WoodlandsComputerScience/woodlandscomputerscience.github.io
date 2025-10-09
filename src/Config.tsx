@@ -1,3 +1,5 @@
+import { isFuture } from "date-fns";
+
 export const DISCORD_URL: string = ""; // unused
 export const INSTAGRAM_URL: string = "https://www.instagram.com/woodlands.cs/";
 export const EMAIL_URL: string = "";
@@ -7,6 +9,7 @@ export interface Meeting {
     date: Date;
     title: string;
     details: React.ReactNode;
+    notice?: string;
 }
 
 export function meetingTime(date: string) : Date {
@@ -37,10 +40,13 @@ export const meetings : Meeting[] = [
         details: <>Begin finalizing your game and adding the finishing touches.</>,
     },
     {
-        date: meetingTime("2025-10-13"),
+        date: meetingTime("2025-10-16"),
         title: "Showcase",
         details: <>Game jam submissions are due!</>,
+        notice: "moved to Thursday due to Thanksgiving",
     },
 ];
 
-export const gameJamEndDate = meetingTime("2025-10-13");
+export const gameJamEndDate = meetingTime("2025-10-16");
+
+export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));

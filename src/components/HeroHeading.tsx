@@ -85,7 +85,7 @@ export default function HeroHeading() {
         return () => window.cancelAnimationFrame(animationFrame);
     }, []);
 
-    return <div className={"border-1 border-b-0 border-gray-800 p-5 rounded-t-3xl flex flex-col items-start h-195 max-h-[82vh] transition-colors duration-2500 bg-linear-to-t sm:bg-linear-to-br from-slate-950 from-35% to-zinc-950 via-75% " + bgClassName}>
+    return <div className={"p-5 rounded-t-3xl flex flex-col items-start h-195 max-h-[82vh] transition-colors duration-2500 bg-linear-to-t sm:bg-linear-to-br from-slate-950 from-35% to-zinc-950 via-75% " + bgClassName}>
             <TrafficLight className="h-3.5" />
             <div className="my-auto w-full md:pl-12">
                 <h1 id="home" className="@container text-xl sm:text-4xl my-4 font-bold max-w-3xl"><em>Open doors</em> to

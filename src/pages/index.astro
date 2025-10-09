@@ -12,6 +12,7 @@ import gameJamImage from '../assets/GameJam.png';
 import { NewsBar, NewsItem } from '../components/NewsBar';
 import Time from '../components/Time';
 import HeroHeading from '../components/HeroHeading';
+import { gameJamEndDate } from '../Config';
 
 const posts = (await getCollection('posts')).sort(
     (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -25,9 +26,9 @@ Join us weekly for lessons, workshops, and contests.
 <Base title="Woodlands Computer Science" description={desc}>
     <HomeNav client:load />
     <main class="p-4 pt-0 lg:pt-4 h-full min-w-0 max-w-full w-7xl flex flex-col lg:mr-4 gap-4" >
-        <Pane trafficLight={false} className="overflow-clip">
+        <Pane trafficLight={false} className="outline-1 outline-neutral-800 overflow-clip">
             <HeroHeading client:load />
-            <div class="p-5 flex flex-col gap-4 items-start">
+            <div class="p-5 flex flex-col gap-4 items-start bg-zinc-900">
                 <h2 class="text-3xl font-bold mb md:px-12">Latest Updates</h2>
                 <NewsBar client:load>
                     {posts.map((p, idx) => <NewsItem href={"/posts/" + p.id}>
@@ -47,8 +48,8 @@ Join us weekly for lessons, workshops, and contests.
                 </NewsBar>
                 <a href="/posts" class="text-center mx-auto icon-text mb-8">View all <FaAngleRight /></a>
             </div>
-            <hr />
-            <div class="flex flex-col-reverse xl:flex-row items-start py-8 px-5 md:px-15 bg-zinc-900">
+            <hr class="mx-5 sm:mx-17"/>
+            <div class="flex flex-col-reverse xl:flex-row items-start py-8 px-5 md:px-17">
                 <div>
                     <div class="flex flex-col gap-4 max-w-3xl items-start">
                         <h2 class="text-3xl font-bold" id="game-jam">Game Jam 2025</h2>
@@ -56,7 +57,7 @@ Join us weekly for lessons, workshops, and contests.
                         <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
                             Come join us in Room 100, where we'll teach you how to use the <strong>Godot Game Engine</strong>&mdash;&mdash;no
                             technical or gamedev experience necessary.</p>
-                        <p class="text-foreground-dimmed text-sm"><i>Submissions are due on October 13.</i></p>
+                        <p class="text-foreground-dimmed text-sm"><i>Submissions are due on <Time format="MMMM dd" dateTime={gameJamEndDate} />.</i></p>
                         <a href="/game-jam" class="btn" role="button">Details <FaAngleRight /></a>
                     </div> 
                     <hr class="my-8" />
@@ -67,10 +68,10 @@ Join us weekly for lessons, workshops, and contests.
                 </div>
                 <Image priority alt="Game jam poster" src={gameJamImage} class="xl:sticky xl:top-8 w-full sm:max-w-5/7 mx-auto xl:max-w-3/7 mb-8 xl:my-0 xl:ml-12" />
             </div>
-            <hr />
-            <div class="flex flex-col-reverse xl:flex-row items-start justify-between p-5 sm:px-15">
-                <article class="flex flex-col gap-4 items-start max-w-3xl">
-                    <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
+            <hr class="mx-5 sm:mx-17"/>
+            <div class="flex flex-col-reverse xl:flex-row items-center justify-between p-5 sm:px-17 bg-zinc-900">
+            <article class="flex flex-col gap-4 items-start max-w-3xl">
+                <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
                     <p>
                         hack::peel is the Woodlands' annual Peel-wide hackathon.
                         Join over 100 students from across the Peel region and turn a special idea into your very own hack!

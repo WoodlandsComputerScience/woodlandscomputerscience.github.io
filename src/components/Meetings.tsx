@@ -1,8 +1,6 @@
-import {format, isFuture, isPast, isToday} from "date-fns";
+import {format, isPast, isToday} from "date-fns";
 import {useEffect, useState} from "react";
-import { meetings, type Meeting } from "../Config";
-
-export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));
+import { getNextMeeting, meetings, type Meeting } from "../Config";
 
 export default function Meetings ({ showNextMeeting } : { showNextMeeting?: boolean }) {
     const [ nextMeeting, setNextMeeting ] = useState<Meeting | undefined>(undefined);
@@ -13,10 +11,12 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
     return <div className="flex flex-col gap-8">
 
         {showNextMeeting && <div className="mt-4">
-                <p>Meetings are held weekly every Monday.</p>
+                <p>Meetings are held weekly on Mondays.</p>
                 {nextMeeting && isToday(nextMeeting.date) && <p><strong>Our next meeting is today!</strong></p>}
-                {nextMeeting && !isToday(nextMeeting.date) && <p>
-                    Our next meeting will be on <strong>{format(nextMeeting.date, "MMMM d")}</strong>.
+                {nextMeeting && !isToday(nextMeeting.date) && <p className="mt-4">
+                    Our next meeting will be on <strong>
+                        {format(nextMeeting.date, "MMMM d")}
+                    </strong> {nextMeeting.notice && <em>({nextMeeting.notice})</em>}.
                 </p>}
             </div>
         }
