@@ -18,7 +18,7 @@ const posts = (await getCollection('posts')).sort(
                 <div class="p-5">
                     <h1 class="text-4xl">Meeting Notes</h1>
                     <p class="mb-8">Club updates, meeting notes, and resources will be posted here.</p>
-                    <hr class="my-8" />
+                    <div class="hline my-8" />
                     <h2>Latest Posts</h2>
                     <ul class="list-none p-0 m-0 max-w-xl">
                         {posts.map((post) => <li class="ps-0 mb-16">

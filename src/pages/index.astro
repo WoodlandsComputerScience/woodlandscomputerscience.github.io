@@ -48,10 +48,9 @@ Join us weekly for lessons, workshops, and contests.
                 </NewsBar>
                 <a href="/posts" class="text-center mx-auto icon-text mb-8">View all <FaAngleRight /></a>
             </div>
-            <hr class="mx-5 sm:mx-17"/>
             <div class="flex flex-col-reverse xl:flex-row items-start py-8 px-5 md:px-17">
                 <div>
-                    <div class="flex flex-col gap-4 max-w-3xl items-start">
+                    <div class="flex flex-col gap-4 max-w-3xl items-start my-8">
                         <h2 class="text-3xl font-bold" id="game-jam">Game Jam 2025</h2>
                         <p>This month, we're once again hosting our annual game jam! The theme this year is <strong>Comes in Pairs</strong>.</p>
                         <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
@@ -60,18 +59,17 @@ Join us weekly for lessons, workshops, and contests.
                         <p class="text-foreground-dimmed text-sm"><i>Submissions are due on <Time format="MMMM dd" dateTime={gameJamEndDate} />.</i></p>
                         <a href="/game-jam" class="btn" role="button">Details <FaAngleRight /></a>
                     </div> 
-                    <hr class="my-8" />
-                    <div class="flex flex-col gap-4 max-w-xl">
+                    <div class="hline" />
+                    <div class="flex flex-col gap-4 max-w-xl my-8">
                         <h2 class="text-3xl font-bold" id="calendar">Calendar</h2>
                         <Meetings client:load showNextMeeting />
                     </div>
                 </div>
                 <Image priority alt="Game jam poster" src={gameJamImage} class="xl:sticky xl:top-8 w-full sm:max-w-5/7 mx-auto xl:max-w-3/7 mb-8 xl:my-0 xl:ml-12" />
             </div>
-            <hr class="mx-5 sm:mx-17"/>
             <div class="flex flex-col-reverse xl:flex-row items-center justify-between p-5 sm:px-17 bg-zinc-900">
-            <article class="flex flex-col gap-4 items-start max-w-3xl">
-                <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
+                <article class="flex flex-col gap-4 items-start max-w-3xl">
+                    <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
                     <p>
                         hack::peel is the Woodlands' annual Peel-wide hackathon.
                         Join over 100 students from across the Peel region and turn a special idea into your very own hack!

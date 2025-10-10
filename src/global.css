@@ -315,6 +315,11 @@
             transform: rotate(180deg);
         }
     }
+    .hline {
+        display: block;
+        background-color: var(--color-neutral-600);
+        height: 1px;
+    }
     .nav-link {
         display: flex;
         @apply gap-2;
