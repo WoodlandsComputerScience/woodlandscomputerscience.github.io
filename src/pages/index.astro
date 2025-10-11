@@ -28,7 +28,7 @@ Join us weekly for lessons, workshops, and contests.
     <main class="p-4 pt-0 lg:pt-4 h-full min-w-0 max-w-full w-7xl flex flex-col lg:mr-4 gap-4" >
         <Pane trafficLight={false} className="outline-1 outline-neutral-800 overflow-clip">
             <HeroHeading client:load />
-            <div class="p-5 flex flex-col gap-4 items-start bg-zinc-900 pt-8 inset-shadow-[0_30px_30px_-20px_black]">
+            <div class="p-5 flex flex-col gap-4 items-start pt-8 inset-shadow-[0_30px_30px_-20px_black]">
                 <h2 class="text-3xl font-bold mb md:px-12">Latest Updates</h2>
                 <NewsBar client:load>
                     {posts.map((p, idx) => <NewsItem href={"/posts/" + p.id}>
@@ -46,11 +46,12 @@ Join us weekly for lessons, workshops, and contests.
                         </article>
                     </NewsItem>)}
                 </NewsBar>
-                <a href="/posts" class="text-center mx-auto icon-text mb-8">View all <FaAngleRight /></a>
+                <a href="/posts" class="text-center mx-auto icon-text">View all <FaAngleRight /></a>
             </div>
-            <div class="flex flex-col-reverse xl:flex-row items-start py-8 px-5 md:px-17">
+            <div class="hline mx-5 sm:mx-17 my-8" />
+            <div class="flex flex-col-reverse xl:flex-row items-start px-5 md:px-17">
                 <div>
-                    <div class="flex flex-col gap-4 max-w-3xl items-start my-8">
+                    <div class="flex flex-col gap-4 max-w-3xl items-start">
                         <h2 class="text-3xl font-bold" id="game-jam">Game Jam 2025</h2>
                         <p>This month, we're once again hosting our annual game jam! The theme this year is <strong>Comes in Pairs</strong>.</p>
                         <p>Are you passionate about art, modeling, music, or coding? Have you always wanted to make a game of your very own?
@@ -59,17 +60,18 @@ Join us weekly for lessons, workshops, and contests.
                         <p class="text-foreground-dimmed text-sm"><i>Submissions are due on <Time format="MMMM dd" dateTime={gameJamEndDate} />.</i></p>
                         <a href="/game-jam" class="btn" role="button">Details <FaAngleRight /></a>
                     </div> 
-                    <div class="hline" />
-                    <div class="flex flex-col gap-4 max-w-xl my-8">
+                    <div class="hline my-8" />
+                    <div class="flex flex-col max-w-xl">
                         <h2 class="text-3xl font-bold" id="calendar">Calendar</h2>
                         <Meetings client:load showNextMeeting />
                     </div>
                 </div>
                 <Image priority alt="Game jam poster" src={gameJamImage} class="xl:sticky xl:top-8 w-full sm:max-w-5/7 mx-auto xl:max-w-3/7 mb-8 xl:my-0 xl:ml-12" />
             </div>
-            <div class="flex flex-col-reverse xl:flex-row items-center justify-between p-5 sm:px-17 bg-zinc-900">
+            <div class="hline mx-5 sm:mx-17 my-8" />
+            <div class="flex flex-col-reverse xl:flex-row items-center justify-between pt-0 p-5 sm:px-17">
                 <article class="flex flex-col gap-4 items-start max-w-3xl">
-                    <h2 class="text-3xl font-bold mb-4">hack::peel</h2>
+                    <h2 class="text-3xl font-bold">hack::peel</h2>
                     <p>
                         hack::peel is the Woodlands' annual Peel-wide hackathon.
                         Join over 100 students from across the Peel region and turn a special idea into your very own hack!
