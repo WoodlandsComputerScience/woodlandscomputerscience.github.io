@@ -11,6 +11,9 @@ import gameJamPoster from "../assets/GameJam.png";
 import {Image} from "astro:assets";
 import Footer from "../components/Footer";
 import GameJamFaq from "../components/GameJamFaq";
+import Time from "../components/Time";
+import { gameJamEndDate } from "../Config";
+import { FaExternalLinkAlt } from "react-icons/fa";
 ---
 
 <Base title="Game Jam 2025 | Woodlands Computer Science" description="Woodlands CS 2025 game jam, from September 16 to October 13.">
@@ -22,7 +25,7 @@ import GameJamFaq from "../components/GameJamFaq";
                     <h1 class="text-5xl font-bold mb-4">Game Jam 2025</h1>
                     <div class="text-xl grid grid-cols-[auto_1fr] gap-x-2 gap-y-3 items-start">
                         <strong class="icon-text"><FaRegClock />When: </strong>
-                        <span>September 22 to October 13</span>
+                        <span>September 22 to <Time dateTime={gameJamEndDate} format="MMMM d" /></span>
                         <strong class="icon-text"><LuCherry />Theme: </strong>
                         <span>Comes in Pairs</span>
                     </div>
@@ -39,7 +42,10 @@ import GameJamFaq from "../components/GameJamFaq";
                             on Discord for help on any challenges you encounter.
                         </p>
 
-                        <GameJamActions client:load />
+                        
+                        <div class="flex flex-col gap-4 items-start mt-4 max-w-full flex-wrap">
+                            <a href="https://itch.io/jam/woodlands-cs-club-jam-2025" class="btn" role="button">View on Itch <FaExternalLinkAlt /></a>
+                        </div>
 
                     </div>
                     <div class="hline my-8" />

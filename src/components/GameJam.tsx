@@ -33,23 +33,3 @@ export function GameJamCountdown() {
         <span className="text-lg text-foreground-dimmed text-center">{!concluded && <Time format="(EEEE, MMMM dd)" dateTime={gameJamEndDate} />}</span>
     </div>
 }
-
-export function GameJamActions() {
-    const [concluded, setConcluded] = useState(false);
-    useEffect(() => {
-        const interval = setInterval(() => setConcluded(isPast(gameJamEndDate)), 1000);
-        return () => clearInterval(interval);
-    });
-
-    return <>
-        {!concluded &&
-            <div className="flex flex-col gap-4 items-start mt-4 max-w-full flex-wrap">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScMlYuaazZTfdOUaqZgT0fYL_2F8TTW5Ihji6-xBKGuSN2a_w/viewform"
-                   className="btn" role="button">Submit a Game <FaAngleRight /></a>
-                <span className="text-foreground-dimmed text-sm italic">
-                    Make sure you are signed into your PDSB account
-                </span>
-            </div>
-        }
-    </>
-}

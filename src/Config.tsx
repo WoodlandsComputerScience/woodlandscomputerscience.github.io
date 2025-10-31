@@ -47,6 +47,6 @@ export const meetings : Meeting[] = [
     },
 ];
 
-export const gameJamEndDate = meetingTime("2025-10-16");
+export const gameJamEndDate = meetingTime("2025-10-20");
 
 export const getNextMeeting = () => meetings.find(meeting => isFuture(meeting.date));
