@@ -16,9 +16,13 @@ const {title, description} = Astro.props;
     <title>{title}</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SHW61T225"></script>
     <script>
+        // @ts-ignore
         window.dataLayer = window.dataLayer || [];
+        // @ts-ignore
         function gtag(){dataLayer.push(arguments);}
+            // @ts-ignore
             gtag('js', new Date());
+            // @ts-ignore
             gtag('config', 'G-5SHW61T225');
     </script>
 </head>
