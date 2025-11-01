@@ -28,7 +28,7 @@ Join us weekly for lessons, workshops, and contests.
     <main class="p-4 pt-0 lg:pt-4 h-full min-w-0 max-w-full w-7xl flex flex-col lg:mr-4 gap-4" >
         <Pane trafficLight={false} className="border-1 border-neutral-700 overflow-clip">
             <HeroHeading client:load />
-            <div class="px-5 flex flex-col gap-4 items-start pt-8 inset-shadow-[0_15px_15px_-5px_black]">
+            <div class="px-5 flex flex-col gap-4 items-start pt-8 inset-shadow-[0_15px_15px_-13px_rgba(0,0,0,0.9)]">
                 <h2 class="text-3xl font-bold md:px-12">Latest Updates</h2>
                 <NewsBar client:load>
                     {posts.map((p, idx) => <NewsItem href={"/posts/" + p.id}>
