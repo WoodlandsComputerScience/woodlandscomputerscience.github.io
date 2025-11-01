@@ -9,7 +9,7 @@ const list = [
     ["Artificial Intelligence", "text-violet-400", "via-violet-950"],
     ["Game Development", "text-orange-400", "via-orange-950"],
     ["Competitive Programming", "text-indigo-400", "via-indigo-950"],
-    ["All Things Computer\xa0Science", "bg-clip-text text-transparent bg-gradient-to-br from-brand via-green-400 to-green-300", "via-green-950"], // non breaking space
+    ["All Things CS", "bg-clip-text text-transparent bg-gradient-to-br from-brand via-green-400 to-green-300", "via-green-950"], // non breaking space
 ];
 
 const longest = list.map(([x]) => x).sort((a, b) => b.length - a.length)[0];
@@ -88,18 +88,18 @@ export default function HeroHeading() {
     return <div className={"p-5 rounded-t-3xl flex flex-col items-start h-190 max-h-[82vh] transition-colors duration-2500 bg-linear-to-t sm:bg-linear-to-br from-slate-950 from-35% to-zinc-950 via-75% " + bgClassName}>
             <TrafficLight className="h-3.5" />
             <div className="my-auto w-full md:pl-12">
-                <h1 id="home" className="@container text-xl sm:text-4xl my-4 font-bold max-w-3xl"><em>Open doors</em> to
-                    <strong className="mt-2 sm:mt-4 block text-3xl @md:text-5xl @lg:text-5xl @2xl:text-6xl @3xl:text-7xl font-extrabold h-[2lh]">
+                <h1 id="home" className="text-xl sm:text-3xl my-4 max-w-2xl"><em>Open doors</em> to
+                    <strong className="sm:mt-4 block text-4xl sm:text-6xl lg:text-7xl font-extrabold h-[2lh]">
                         <span className={className}>{text}
                         <span className={"transition-opacity font-normal text-white " + (blink ? "caret" : "opacity-100")}>_</span></span><span className="invisible">{reserveString}</span>
                     </strong>
                 </h1>
-                <p className="leading-8 max-w-2xl text-pretty mb-4 hidden sm:block">
-                    Welcome to the Woodlands School's computer science club!
+                <p className="max-w-2xl text-md sm:text-lg mb-4">
+                    Welcome to the Woodlands School Computer Science Club!
                 </p>
-                <p className="leading-8 max-w-2xl text-pretty">
+                <p className="max-w-2xl text-md sm:text-lg">
                     Join us <span className="text-neutral-200 underline"> Monday lunches in Room 100</span> for lessons, workshops, and
-                    contests. Beginning programmers or those interested in CS are encouraged to attend!
+                    contests. Beginning programmers or those interested in CS are always welcome!
                 </p>
                 <a href="#calendar" className="mt-8 btn text-brand border-brand shadow-brand" role="button">See What's Happening <FaAngleRight /></a>
             </div>
