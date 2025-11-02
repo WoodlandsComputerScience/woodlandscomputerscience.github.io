@@ -14,8 +14,14 @@ export default function Acordion() {
             </Accordion.Header>
             <Accordion.Content className="accordion-content">
                 <p>
-                    Yes! You are free to use any engine you wish. However, club lessons will be focused on Godot
-                    this year.
+                    The exec team is currently broke, but the prizes are:
+                    <ul>
+                        <li>1st place: $25 for your team</li>
+                        <li>2nd place: $15 for your team</li>
+                        <li>3rd place: $10 for your team</li>
+                        <li>Winners could also get a boost to their future executive applications for the club next year 🌚</li>
+                        <li>All participants who make submissions will be featured on our socials and website!</li>
+                    </ul>
                 </p>
             </Accordion.Content>
         </Accordion.Item>
