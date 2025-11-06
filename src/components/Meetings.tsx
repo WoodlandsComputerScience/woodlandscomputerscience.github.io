@@ -61,5 +61,6 @@ export default function Meetings ({ showNextMeeting } : { showNextMeeting?: bool
                 </li>
             })}
         </ol>
+        <i className="text-foreground-dimmed">Check back for updates to the calendar!</i>
     </div>
 }

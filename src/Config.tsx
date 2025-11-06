@@ -18,32 +18,14 @@ export function meetingTime(date: string) : Date {
 
 export const meetings : Meeting[] = [
     {
-        date: meetingTime("2025-09-15"),
-        title: "Intro to Game Development",
-        details: <>We're now kicking off our game development series for 2025!
-            This meeting is an intro into the principles of game development.</>,
+        date: meetingTime("2025-11-03"),
+        title: "Intro to Web Development",
+        details: <>We'll be going over the basics of web dev and introduce HTML/CSS/JavaScript.</>,
     },
     {
-        date: meetingTime("2025-09-22"),
-        title: "Game Jam Begins!",
-        details: <>The theme has been revealed: <strong>Comes in Pairs</strong><br /><br />
-            This meeting will be focused on exploring the Godot game engine.</>,
-    },
-    {
-        date: meetingTime("2025-09-29"),
-        title: "Prototyping Your Game",
-        details: <>Start prototyping your idea first to make sure it's viable and fun.</>,
-    },
-    {
-        date: meetingTime("2025-10-06"),
-        title: "Reiterating and Polishing",
-        details: <>Begin finalizing your game and adding the finishing touches.</>,
-    },
-    {
-        date: meetingTime("2025-10-16"),
-        title: "Showcase",
-        details: <>Game jam submissions are due!</>,
-        notice: "moved to Thursday due to Thanksgiving",
+        date: meetingTime("2025-11-10"),
+        title: "Choosing a Web Framework",
+        details: <>Web frameworks simplify and accelerate the development of a site.</>,
     },
 ];
 

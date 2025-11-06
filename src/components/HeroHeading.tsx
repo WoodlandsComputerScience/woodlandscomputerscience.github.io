@@ -23,6 +23,7 @@ export default function HeroHeading() {
     const stateStart = useRef(-1);
     const initTime = 750;
     const blinkTime = 3500;
+    const longBlinkTime = 20000;
     const typingSpeed = 1000; // cpm
     const updateInterval = 60000/typingSpeed;
     const state = useRef<"init" | "right" | "left" | "hold">("init");
@@ -62,7 +63,7 @@ export default function HeroHeading() {
                     break;
                 case "hold":
                     setBlink(true);
-                    if (idx.current===list.length-1 || elapsed < blinkTime) break;
+                    if ((idx.current===list.length-1  && elapsed < longBlinkTime) || elapsed < blinkTime) break;
                     // fall through
                     state.current = "left";
                     stateStart.current = time;
@@ -73,7 +74,7 @@ export default function HeroHeading() {
                         if (!needsUpdate) return t;
                         if (t.length-1 == 0) {
                             state.current="right";
-                            idx.current++;
+                            idx.current = (idx.current + 1) % list.length;
                             stateStart.current = time;
                         }
                         return target.substring(0, t.length-1);
