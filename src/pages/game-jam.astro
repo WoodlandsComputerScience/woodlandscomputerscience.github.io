@@ -2,7 +2,7 @@
 import "../global.css";
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav";
-import {FaRegClock} from "react-icons/fa6";
+import {FaAngleRight, FaRegClock} from "react-icons/fa6";
 import {LuCherry} from "react-icons/lu";
 import Meetings from "../components/Meetings";
 import Pane from "../components/Pane";
@@ -42,15 +42,19 @@ import { FaExternalLinkAlt } from "react-icons/fa";
                             on Discord for help on any challenges you encounter.
                         </p>
 
+                        <p>
+                            <b>The game jam has concluded.</b>
+                        </p>
+
                         
-                        <div class="flex flex-col gap-4 items-start mt-4 max-w-full flex-wrap">
+                        <div class="flex flex-row gap-4 items-start mt-4 max-w-full flex-wrap">
+                            <a href="http://localhost:4321/posts/2025-10-25-game-jam-results" class="btn text-brand border-brand shadow-brand" role="button">
+                                Winners <FaAngleRight />
+                            </a>
                             <a href="https://itch.io/jam/woodlands-cs-club-jam-2025" class="btn" role="button">View on Itch.io <FaExternalLinkAlt /></a>
                         </div>
 
                     </div>
-                    <div class="hline my-8" />
-                    <h2 class="text-3xl font-bold mb-4">Schedule</h2>
-                    <Meetings client:load />
                     <div class="hline my-8" />
                     <h2 class="text-3xl font-bold mb-4">FAQ</h2>
                     <GameJamFaq client:load />

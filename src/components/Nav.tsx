@@ -21,7 +21,7 @@ const links = [
     {
         title: "Game Jam 2025",
         href: "/game-jam",
-        className: "nav-link gradient-text text-to-emerald-300 text-from-brand font-black",
+        className: "nav-link hover:text-foreground-bright",
     },
 ];
 
