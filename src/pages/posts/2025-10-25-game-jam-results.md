@@ -19,10 +19,10 @@ Aaron Saini, Liheng Luo, Ajit Singh, Junyang Pu
 ![Escape the Evil School Simulator](../../assets/gj-etess.png)
 
 <div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
-  <a class="btn font-mono" href="https://flanman20.itch.io/ace-noir">Try on Itch.io!</a>
+  <a class="btn font-mono" href="https://xplayer150.itch.io/etess">Try on Itch.io!</a>
 </div>
 
-Everything comes in pairs, since there are 2 dimensions-peaceful and horror. Players have to survive the teachers and final boss to get to the end.
+Escape the Evil School Simulator is an Andrew Dai awards appraised game created by the ETESS team for the Woodlands 2025 game jam. It has been a long journey, and we're really proud of it.
 
 ---
 
@@ -47,4 +47,4 @@ Ethan Wang, Joshua Ah Yong
   <a class="btn font-mono" href="https://cheesyinthehead.itch.io/scattered">Try on Itch.io!</a>
 </div>
 
-The game starts with memory match that the player needs to form pairs with. After the cards fall, there are two worlds (pair) that have cards to be collected to re-pair all the cards.
+The cards are scattered between the worlds. Collect the pairs of cards to win!
