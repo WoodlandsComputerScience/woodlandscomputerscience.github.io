@@ -1,0 +1,50 @@
+---
+layout: "../../layouts/Post.astro"
+title: "Game Jam Results!"
+date: 2025-10-25T00:00:00-5
+categories: ["Game Jam 2025"]
+description: |
+  Announcing the Winners of our 2025 Game Jam...
+image: "../../thumbs/Game Jam 2025 Results.png"
+---
+This year's game jam was a great success, and we recieved eight outstanding submissions.
+Congratulations to all who participated! Submitted games can be played [here](https://itch.io/jam/woodlands-cs-club-jam-2025/entries).
+Without further ado, the winners of our 2025 Game Jam are...
+
+---
+
+## 🥇 Escape the Evil School Simulator
+Aaron Saini, Liheng Luo, Ajit Singh, Junyang Pu
+
+![Escape the Evil School Simulator](../../assets/gj-etess.png)
+
+<div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
+  <a class="btn font-mono" href="https://flanman20.itch.io/ace-noir">Try on Itch.io!</a>
+</div>
+
+Everything comes in pairs, since there are 2 dimensions-peaceful and horror. Players have to survive the teachers and final boss to get to the end.
+
+---
+
+## 🥈 Ace Noir
+Muhammad Haseeb
+
+![Ace Noir](../../assets/gj-acenoir.png)
+
+<div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
+  <a class="btn font-mono" href="https://flanman20.itch.io/ace-noir">Try on Itch.io!</a>
+</div>
+
+You're a detective, coming back after a short stint with legal trouble, investigating a recent murder in a building. You go to investigate the "janitor" a local at a nearby bar. However, you find this bar has special rules, finding yourself playing poker with your past, and future on the line.
+
+---
+
+## 🥉 Scattered
+Ethan Wang, Joshua Ah Yong
+
+![Scattered](../../assets/gj-scattered.png)
+<div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
+  <a class="btn font-mono" href="https://cheesyinthehead.itch.io/scattered">Try on Itch.io!</a>
+</div>
+
+The game starts with memory match that the player needs to form pairs with. After the cards fall, there are two worlds (pair) that have cards to be collected to re-pair all the cards.

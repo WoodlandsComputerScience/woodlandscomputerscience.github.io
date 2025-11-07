@@ -130,7 +130,7 @@
             color: var(--color-purple-200);
         }
         img {
-            @apply max-h-120 max-w-full my-12;
+            @apply max-h-120 max-w-full w-full my-12;
             object-fit: contain;
         }
         pre {
