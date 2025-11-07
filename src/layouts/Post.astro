@@ -41,8 +41,8 @@ const toc = buildTOC(headings);
         <div class={"mx-auto flex flex-col gap-4 blog-post max-w-full " + (frontmatter.slides ? "w-full" : "w-3xl")}>
             <Pane>
                 <a href="/posts/" class="p-0 icon-text text-foreground no-underline mb-4 ml-5"><FaAngleLeft/>All Posts</a>
-                <article class="max-w-full p-5">
-                    <h1>{frontmatter.title}</h1>
+                <article class="max-w-full px-5">
+                    <h1 class="text-4xl">{frontmatter.title}</h1>
                     <p>
                         {isValid(date) && <Time dateTime={date} format="d MMMM yyyy" />}
                     </p>
