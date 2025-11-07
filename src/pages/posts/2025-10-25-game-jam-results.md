@@ -4,7 +4,7 @@ title: "Game Jam Results!"
 date: 2025-10-25T00:00:00-5
 categories: ["Game Jam 2025"]
 description: |
-  Announcing the Winners of our 2025 Game Jam...
+  Announcing the winners of our 2025 Game Jam...
 image: "../../thumbs/Game Jam 2025 Results.png"
 ---
 This year's game jam was a great success, and we recieved eight outstanding submissions.
