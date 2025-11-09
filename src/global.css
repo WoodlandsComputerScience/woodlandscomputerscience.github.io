@@ -130,7 +130,7 @@
             color: var(--color-purple-200);
         }
         img {
-            @apply max-h-120 max-w-full w-full my-12;
+            @apply max-h-150 max-w-full w-full my-8;
             object-fit: contain;
         }
         pre {
@@ -154,6 +154,9 @@
         }
         p {
             @apply my-3;
+            :last-child {
+                @apply mb-0;
+            }
         }
 
         .blog-contents {

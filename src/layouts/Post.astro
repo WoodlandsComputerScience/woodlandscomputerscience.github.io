@@ -51,14 +51,14 @@ const toc = buildTOC(headings);
                             <p class="text-yellow-300 my-4 italic">This content may require a PDSB account.</p>
                     }
                     {!frontmatter.slides &&
-                        <nav class="mt-4 mb-8  ml-4 rounded-2xl p-4 border-1 toc border-neutral-700 max-w-sm">
+                        <nav class="mt-4 mb-4  ml-4 rounded-2xl p-4 border-1 toc border-neutral-700 max-w-sm">
                             <h2 class="mt-0">Table of Contents</h2>
                             <ol>
                                 {toc.map(heading => <TableOfContents heading={heading} />)}
                             </ol>
                         </nav>
                     }
-                    <div class="blog-contents w-full">
+                    <div class="blog-contents w-full py-5">
                         <slot />
                     </div>
                 </article>

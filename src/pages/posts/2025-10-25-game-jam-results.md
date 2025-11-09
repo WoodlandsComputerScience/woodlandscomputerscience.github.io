@@ -18,7 +18,7 @@ Aaron Saini, Liheng Luo, Ajit Singh, Junyang Pu
 
 ![Escape the Evil School Simulator](../../assets/gj-etess.png)
 
-<div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
+<div class=" mb-4 w-full flex flex-row justify-center">
   <a class="btn font-mono" href="https://xplayer150.itch.io/etess">Try on Itch.io!</a>
 </div>
 
@@ -31,7 +31,7 @@ Muhammad Haseeb
 
 ![Ace Noir](../../assets/gj-acenoir.png)
 
-<div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
+<div class=" mb-4 w-full flex flex-row justify-center">
   <a class="btn font-mono" href="https://flanman20.itch.io/ace-noir">Try on Itch.io!</a>
 </div>
 
@@ -43,7 +43,7 @@ You're a detective, coming back after a short stint with legal trouble, investig
 Ethan Wang, Joshua Ah Yong
 
 ![Scattered](../../assets/gj-scattered.png)
-<div class=" mb-4 -mt-8 w-full flex flex-row justify-center">
+<div class=" mb-4 w-full flex flex-row justify-center">
   <a class="btn font-mono" href="https://cheesyinthehead.itch.io/scattered">Try on Itch.io!</a>
 </div>
 
