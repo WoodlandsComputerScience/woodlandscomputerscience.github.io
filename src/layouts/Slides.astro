@@ -1,6 +1,6 @@
 ---
 import Post from "./Post.astro";
-const url: string = Astro.props.frontmatter.slides;
+const url: string = Astro.props.frontmatter.slides.replace("pub?","pubembed?");
 ---
 <Post {...Astro.props}>
     <iframe class="rounded-2xl mt-4 w-full aspect-[1.55] bg-white" src={url} allowfullscreen="true" />

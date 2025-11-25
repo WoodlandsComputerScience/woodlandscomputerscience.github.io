@@ -27,6 +27,21 @@ export const meetings : Meeting[] = [
         title: "Choosing a Web Framework",
         details: <>Web frameworks simplify and accelerate the development of a site.</>,
     },
+    {
+        date: meetingTime("2025-11-17"),
+        title: "Bad UI Battles!",
+        details: <>Introduction to Bad UI Battles</>,
+    },
+    {
+        date: meetingTime("2025-11-24"),
+        title: "Enhancing Bad UI",
+        details: <>Some ideas to make your Bad UI even worse!</>,
+    },
+    {
+        date: meetingTime("2025-12-01"),
+        title: "Bad UI Showcase!",
+        details: <></>,
+    },
 ];
 
 export const gameJamEndDate = meetingTime("2025-10-20");
