@@ -18,29 +18,9 @@ export function meetingTime(date: string) : Date {
 
 export const meetings : Meeting[] = [
     {
-        date: meetingTime("2025-11-03"),
-        title: "Intro to Web Development",
-        details: <>We'll be going over the basics of web dev and introduce HTML/CSS/JavaScript.</>,
-    },
-    {
-        date: meetingTime("2025-11-10"),
-        title: "Choosing a Web Framework",
-        details: <>Web frameworks simplify and accelerate the development of a site.</>,
-    },
-    {
-        date: meetingTime("2025-11-17"),
-        title: "Bad UI Battles!",
-        details: <>Introduction to Bad UI Battles</>,
-    },
-    {
-        date: meetingTime("2025-11-24"),
-        title: "Enhancing Bad UI",
-        details: <>Some ideas to make your Bad UI even worse!</>,
-    },
-    {
-        date: meetingTime("2025-12-01"),
-        title: "Bad UI Showcase!",
-        details: <></>,
+        date: meetingTime("2026-03-09"),
+        title: "Spring Game Jam Begins!",
+        details: <>Come to room 100 for our theme reveal and a brainstorming workshop!</>,
     },
 ];
 
