@@ -19,9 +19,9 @@ const links = [
         className: "nav-link hover:text-foreground-bright",
     },
     {
-        title: "Game Jam 2025",
-        href: "/game-jam",
-        className: "nav-link hover:text-foreground-bright",
+        title: "Spring Game Jam",
+        href: "/spring-game-jam-2026",
+        className: "nav-link gradient-text text-to-blue-300 text-from-blue-500 font-black",
     },
 ];
 
